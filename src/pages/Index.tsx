@@ -1,7 +1,13 @@
 import { DanceFitButton } from "@/components/DanceFitButton";
 import { VideoPlaceholder } from "@/components/VideoPlaceholder";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
-import { Home, Heart } from "lucide-react";
+import { CountdownTimer } from "@/components/CountdownTimer";
+import { PaymentLogos } from "@/components/PaymentLogos";
+import { FAQSection } from "@/components/FAQSection";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
+import { PricingSection } from "@/components/PricingSection";
+import { GuaranteeSection } from "@/components/GuaranteeSection";
+import { Home, Heart, CheckCircle, Facebook, Instagram } from "lucide-react";
 
 const Index = () => {
   return (
@@ -134,26 +140,146 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-purple-gradient py-16 px-4">
+      {/* Instructors Section */}
+      <section className="bg-white py-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-bold-caps text-4xl text-white text-shadow mb-8">
-            ¡<span className="text-yellow-highlight">ÚNETE AHORA</span> A NUESTRA COMUNIDAD!
-          </h2>
-          
-          <p className="text-xl text-white mb-8 text-shadow">
-            Transforma tu cuerpo desde la comodidad de tu hogar
+          <div className="mb-8">
+            <ImagePlaceholder 
+              title="PROFESORES - Natalia Alarcón y Cristian Espinosa"
+              aspectRatio="wide"
+            />
+          </div>
+
+          <h3 className="font-bold-caps text-2xl text-secondary mb-6">
+            ¿QUIENES SON LOS PROFESORES Y POR QUÉ PUEDEN AYUDARTE?
+          </h3>
+
+          <p className="text-lg text-secondary leading-relaxed mb-8">
+            Desarrollado por <strong>NATALIA ALARCÓN Y CRISTIAN ESPINOSA</strong> artistas, bailarines y entrenadores profesionales 
+            amantes de la actividad física, con más de 15 años de experiencia y un gran recorrido internacional.
           </p>
 
-          <DanceFitButton variant="accent" size="xl" className="mb-4">
-            EMPEZAR AHORA
-          </DanceFitButton>
+          <p className="text-lg text-secondary leading-relaxed mb-12">
+            Te dan la garantía de que al hacer parte de esta bella comunidad, tendrás una metodología comprobada 
+            y altamente efectiva que te ayudará a lograr tus objetivos físicos, adquirir hábitos más saludables y mejorar tu calidad de vida.
+          </p>
 
-          <div className="text-yellow-highlight font-bold text-lg">
-            ⭐ Resultados garantizados desde la 3ra semana ⭐
+          {/* Benefits List */}
+          <div className="grid md:grid-cols-2 gap-4 mb-12">
+            {[
+              "Tonificar y fortalecer tu cuerpo",
+              "Prevenir y disminuir el sobrepeso", 
+              "Adquirir hábitos saludables",
+              "Transformar tu cuerpo sin gastar en gimnasios",
+              "Mejorar tu condición física",
+              "Prevenir enfermedades gracias a la actividad física",
+              "Ahorrar tiempo, con una metodología de solo 45 minutos al día",
+              "Disminuir el estrés y aumentar tu autoestima"
+            ].map((benefit, index) => (
+              <div key={index} className="flex items-center gap-3 text-left">
+                <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
+                <span className="font-bold text-secondary">{benefit}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-accent/10 p-8 rounded-xl">
+            <h3 className="font-bold-caps text-2xl text-secondary mb-4">
+              ¿CÓMO LO VAS A LOGRAR?
+            </h3>
+            <p className="text-lg text-secondary leading-relaxed">
+              Nuestro método de entrenamiento es de tan solo <strong>45 minutos al día</strong>, 
+              las rutinas de ejercicio las haremos <strong>juntos de manera virtual</strong>, 
+              trabajaremos <strong>5 días por semana (DE LUNES A VIERNES)</strong> y tendrás 
+              acompañamiento constante de nuestra parte, podrás hacernos preguntas cuando quieras.
+            </p>
           </div>
         </div>
       </section>
+
+      {/* Pricing Section */}
+      <PricingSection />
+
+      {/* Countdown Timer */}
+      <section className="bg-secondary py-12 px-4">
+        <div className="max-w-4xl mx-auto">
+          <CountdownTimer />
+          
+          <div className="text-center">
+            <h3 className="font-bold-caps text-2xl text-secondary-foreground mb-8">
+              RECIBE EL PROGRAMA COMPLETO + LOS 6 BONOS 🎁 ANTES QUE EL CONTADOR LLEGUE A CERO.
+            </h3>
+            
+            <DanceFitButton variant="accent" size="xl" className="mb-8">
+              INSCRÍBETE AQUÍ
+            </DanceFitButton>
+            
+            {/* Payment Logos */}
+            <PaymentLogos />
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <TestimonialsSection />
+
+      {/* Guarantee Section */}
+      <GuaranteeSection />
+
+      {/* FAQ Section */}
+      <FAQSection />
+
+      {/* Final CTA Section */}
+      <section className="bg-purple-gradient py-16 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <CountdownTimer />
+          
+          <DanceFitButton variant="accent" size="xl" className="mb-8">
+            INSCRÍBETE AQUÍ
+          </DanceFitButton>
+
+          <div className="bg-yellow-highlight text-accent-foreground rounded-lg p-4 mb-8 max-w-md mx-auto">
+            <div className="bg-red-500 rounded-full h-4 mb-2" style={{ width: '85%' }}></div>
+            <span className="font-bold">SOLO QUEDAN 7 CUPOS - 85%</span>
+          </div>
+          
+          <PaymentLogos />
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-secondary py-8 px-4">
+        <div className="max-w-4xl mx-auto">
+          {/* Social Media Links */}
+          <div className="flex justify-center items-center gap-8 mb-6">
+            <a href="#" className="flex items-center gap-2 text-secondary-foreground hover:text-yellow-highlight">
+              <Facebook className="w-6 h-6" />
+              <span className="font-bold">Síguenos en Facebook</span>
+            </a>
+            <a href="#" className="flex items-center gap-2 text-secondary-foreground hover:text-yellow-highlight">
+              <Instagram className="w-6 h-6" />
+              <span className="font-bold">Síguenos en Instagram</span>
+            </a>
+          </div>
+
+          <div className="text-center">
+            <ImagePlaceholder 
+              title="LOGO TIKTOK"
+              aspectRatio="wide"
+              className="max-w-xs mx-auto mb-4"
+            />
+            <p className="text-secondary-foreground mb-6">Síguenos en Tiktok</p>
+          </div>
+
+          <div className="text-center text-sm text-secondary-foreground">
+            <p className="mb-2">© 2024 – Adelgaza sin salir de casa | Todos los derechos reservados</p>
+            <p>
+              DESCARGOS DE RESPONSABILIDAD IMPORTANTES: Este sitio no es parte del sitio web de Facebook o Facebook, Inc. 
+              Además, este sitio no está respaldado por Facebook de ninguna manera. FACEBOOK es una marca registrada de FACEBOOK, Inc.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
