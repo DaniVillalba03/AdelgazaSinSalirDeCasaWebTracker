@@ -42,12 +42,24 @@ const Index = () => {
           </div>
 
           {/* Video Section */}
-          <div className="max-w-2xl mx-auto mb-12">
-            <VideoPlaceholder 
-              title="¿CÓMO ADELGAZAR SIN SALIR DE CASA?" 
-              duration="01:23"
-              className="mb-4"
-            />
+          <div className="max-w-4xl mx-auto mb-12">
+            <div className="relative bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg overflow-hidden shadow-xl">
+              <video 
+                className="w-full h-auto aspect-video object-cover"
+                controls
+                poster=""
+                preload="metadata"
+              >
+                <source src="/assets/videos/demo/Para Pagina de lanzamiento nuevo 2021.mp4" type="video/mp4" />
+                Tu navegador no soporta el elemento video.
+              </video>
+              
+              {/* Video Title Overlay */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                <h3 className="text-white font-bold text-lg">¿CÓMO ADELGAZAR SIN SALIR DE CASA?</h3>
+                <p className="text-white/80 text-sm">👆 Mira este video de 1 MINUTO para saber como</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
