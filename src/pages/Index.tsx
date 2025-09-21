@@ -21,25 +21,14 @@ const Index = () => {
               <Home className="w-16 h-16 text-white" />
               <Heart className="w-8 h-8 text-accent absolute -top-2 -right-2" />
             </div>
+            {/* Hero Image replacing title */}
             <div>
-              <h1 className="font-bold-caps text-6xl text-shadow leading-tight">
-                <span className="text-yellow-highlight">ADELGAZA</span>
-                <br />
-                <span className="text-white">SIN SALIR</span>
-                <br />
-                <span className="text-white">DE </span>
-                <span className="text-yellow-highlight">CASA</span>
-              </h1>
+              <img 
+                src="/assets/images/hero/CRASHING PORTADA.png"
+                alt="Adelgaza Sin Salir De Casa - Portada Principal"
+                className="w-full max-w-4xl h-auto aspect-[16/9] object-cover rounded-lg shadow-xl"
+              />
             </div>
-          </div>
-          
-          {/* Hero Image */}
-          <div className="mt-8 mb-8">
-            <img 
-              src="/assets/images/hero/CRASHING PORTADA.png"
-              alt="Adelgaza Sin Salir De Casa - Portada Principal"
-              className="w-full max-w-3xl mx-auto h-auto aspect-[16/9] object-cover rounded-lg shadow-xl"
-            />
           </div>
         </div>
       </header>
