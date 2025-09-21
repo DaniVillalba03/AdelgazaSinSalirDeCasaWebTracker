@@ -32,6 +32,15 @@ const Index = () => {
               </h1>
             </div>
           </div>
+          
+          {/* Hero Image */}
+          <div className="mt-8 mb-8">
+            <img 
+              src="/assets/images/hero/CRASHING PORTADA.png"
+              alt="Adelgaza Sin Salir De Casa - Portada Principal"
+              className="w-full max-w-3xl mx-auto h-auto aspect-[16/9] object-cover rounded-lg shadow-xl"
+            />
+          </div>
         </div>
       </header>
 
