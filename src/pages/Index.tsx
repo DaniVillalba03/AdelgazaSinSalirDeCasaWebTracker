@@ -77,12 +77,12 @@ const Index = () => {
             </h4>
           </div>
 
-          {/* Testimonials Collage */}
+          {/* Testimonials Collage Placeholder */}
           <div className="mb-12">
-            <img 
-              src="/assets/images/hero/CRASHING PORTADA.png"
-              alt="COLLAGE DE TESTIMONIOS - Antes y Después"
-              className="w-full h-auto aspect-[16/9] object-cover rounded-lg shadow-lg mb-4"
+            <ImagePlaceholder 
+              title="COLLAGE DE TESTIMONIOS - Antes y Después"
+              aspectRatio="wide"
+              className="mb-4"
             />
           </div>
 
