@@ -60,13 +60,18 @@ const Index = () => {
       {/* Success Message */}
       <section className="bg-purple-gradient py-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h3 className="font-bold-caps text-2xl text-white mb-8">
+          <h3 className="font-bold-caps text-2xl text-white mb-0">
             SI DESEAS LLEGAR A TU <span className="text-yellow-highlight">PESO IDEAL</span>, 
             AUMENTAR <span className="text-yellow-highlight">MASA MUSCULAR</span>, 
             TENER UN <span className="text-yellow-highlight">ABDOMEN PLANO</span> Y 
             SENTIRTE MUCHO MEJOR CONTIGO MISM@, ENTONCES ESTE PROGRAMA DEFINITIVAMENTE ES PARA TI.
           </h3>
+        </div>
+      </section>
 
+      {/* Recommendation and Content */}
+      <section className="bg-black py-12 px-4">
+        <div className="max-w-4xl mx-auto text-center">
           <div className="bg-white/20 p-4 rounded-lg mb-8">
             <h4 className="text-lg font-bold text-white">
               📋 Recomendación: Mirar esta página completa para saber toda la información🤗
