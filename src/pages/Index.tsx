@@ -14,21 +14,14 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       {/* Header Hero Section */}
       <header className="bg-purple-gradient text-white py-12 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Logo with house icon */}
-          <div className="flex items-center justify-center gap-4 mb-8">
-            <div className="relative">
-              <Home className="w-16 h-16 text-white" />
-              <Heart className="w-8 h-8 text-accent absolute -top-2 -right-2" />
-            </div>
-            {/* Hero Image replacing title */}
-            <div>
-              <img 
-                src="/assets/images/hero/CRASHING PORTADA.png"
-                alt="Adelgaza Sin Salir De Casa - Portada Principal"
-                className="w-full max-w-4xl h-auto aspect-[16/9] object-cover rounded-lg shadow-xl"
-              />
-            </div>
+        <div className="max-w-7xl mx-auto text-center">
+          {/* Hero Image */}
+          <div className="mb-8">
+            <img 
+              src="/assets/images/hero/CRASHING PORTADA.png"
+              alt="Adelgaza Sin Salir De Casa - Portada Principal"
+              className="w-full max-w-6xl h-auto aspect-[4/3] object-cover rounded-lg shadow-xl mx-auto"
+            />
           </div>
         </div>
       </header>
