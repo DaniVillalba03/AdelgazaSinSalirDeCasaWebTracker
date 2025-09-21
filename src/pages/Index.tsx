@@ -58,17 +58,17 @@ const Index = () => {
       </section>
 
       {/* Success Message */}
-      <section className="bg-white py-12 px-4">
+      <section className="bg-purple-400 py-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h3 className="font-bold-caps text-2xl text-secondary mb-8">
+          <h3 className="font-bold-caps text-2xl text-white mb-8">
             SI DESEAS LLEGAR A TU <span className="text-yellow-highlight">PESO IDEAL</span>, 
             AUMENTAR <span className="text-yellow-highlight">MASA MUSCULAR</span>, 
             TENER UN <span className="text-yellow-highlight">ABDOMEN PLANO</span> Y 
             SENTIRTE MUCHO MEJOR CONTIGO MISM@, ENTONCES ESTE PROGRAMA DEFINITIVAMENTE ES PARA TI.
           </h3>
 
-          <div className="bg-accent/10 p-4 rounded-lg mb-8">
-            <h4 className="text-lg font-bold text-secondary">
+          <div className="bg-white/20 p-4 rounded-lg mb-8">
+            <h4 className="text-lg font-bold text-white">
               📋 Recomendación: Mirar esta página completa para saber toda la información🤗
             </h4>
           </div>
@@ -82,7 +82,7 @@ const Index = () => {
             />
           </div>
 
-          <h3 className="font-bold-caps text-2xl text-secondary mb-8">
+          <h3 className="font-bold-caps text-2xl text-white mb-8">
             CADA DÍA SON MÁS PERSONAS QUE SE UNEN A NUESTRA COMUNIDAD{" "}
             <span className="text-yellow-highlight">«ADELGAZA SIN SALIR DE CASA»</span>{" "}
             Y ESTÁN TOTALMENTE FELICES Y MUY AGRADECIDOS CON LOS RESULTADOS OBTENIDOS CON NUESTRA METODOLOGÍA.
@@ -91,7 +91,7 @@ const Index = () => {
       </section>
 
       {/* Course Formats */}
-      <section className="bg-secondary py-12 px-4">
+      <section className="bg-black py-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-12">
             <ImagePlaceholder 
