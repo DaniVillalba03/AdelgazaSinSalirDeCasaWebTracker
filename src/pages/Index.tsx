@@ -20,7 +20,7 @@ const Index = () => {
             <img 
               src="/assets/images/hero/crashing-portada.png"
               alt=""
-              className="w-full max-w-4xl h-auto aspect-[16/9] object-cover rounded-lg shadow-xl mx-auto"
+              className="w-full max-w-2xl h-auto aspect-[16/9] object-cover rounded-lg shadow-xl mx-auto"
             />
           </div>
         </div>
