@@ -14,13 +14,13 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       {/* Header Hero Section */}
       <header className="bg-purple-gradient text-white py-3 px-4">
-        <div className="max-w-7xl mx-auto text-center">
+        <div className="w-full text-center">
           {/* Hero Image */}
           <div>
             <img 
               src="/assets/images/hero/crashing-portada.png"
               alt=""
-              className="w-full max-w-2xl h-auto aspect-[16/9] object-cover rounded-lg shadow-xl mx-auto"
+              className="w-full h-auto aspect-[21/9] object-cover rounded-lg shadow-xl"
             />
           </div>
         </div>
