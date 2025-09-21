@@ -13,7 +13,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Header Hero Section */}
-      <header className="bg-purple-gradient">
+      <header className="bg-purple-gradient py-2 px-2">
         <div className="w-full">
           {/* Hero Image */}
           <div>
