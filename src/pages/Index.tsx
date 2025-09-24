@@ -114,10 +114,10 @@ const Index = () => {
           {/* Exercise Categories */}
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="text-center">
-              <ImagePlaceholder 
-                title="ABDOMEN - Ejercicios para abdomen plano"
-                aspectRatio="square"
-                className="mb-4"
+              <img
+                src="/assets/images/program/ABDOMEN.jpg"
+                alt="ABDOMEN - Ejercicios para abdomen plano"
+                className="w-full h-auto aspect-square object-cover rounded-lg shadow-lg mb-4"
               />
               <h4 className="font-bold-caps text-yellow-highlight text-lg">ABDOMEN</h4>
             </div>
