@@ -83,7 +83,7 @@ const Index = () => {
             <img
               src="/assets/images/testimonials/collage.jpg"
               alt="COLLAGE DE TESTIMONIOS - Antes y Después"
-              className="w-full h-auto aspect-[16/9] object-cover rounded-lg shadow-lg mb-4"
+              className="w-full h-auto object-contain rounded-lg shadow-lg mb-4 max-h-96"
             />
           </div>
 
