@@ -39,6 +39,11 @@ const Index = () => {
       document.removeEventListener('mouseenter', handleMouseEnter);
     };
   }, []);
+
+  const handleInscribirse = () => {
+    window.open('https://go.hotmart.com/Y102004689J?ap=0ff3', '_blank');
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header Hero Section */}
@@ -240,7 +245,12 @@ const Index = () => {
               RECIBE EL PROGRAMA COMPLETO + LOS 6 BONOS 🎁 ANTES QUE EL CONTADOR LLEGUE A CERO.
             </h3>
             
-            <DanceFitButton variant="accent" size="xl" className="mb-8">
+            <DanceFitButton 
+              variant="accent" 
+              size="xl" 
+              className="mb-8"
+              onClick={handleInscribirse}
+            >
               INSCRÍBETE AQUÍ
             </DanceFitButton>
             
@@ -264,7 +274,12 @@ const Index = () => {
         <div className="max-w-4xl mx-auto text-center">
           <CountdownTimer />
           
-          <DanceFitButton variant="accent" size="xl" className="mb-8">
+          <DanceFitButton 
+            variant="accent" 
+            size="xl" 
+            className="mb-8"
+            onClick={handleInscribirse}
+          >
             INSCRÍBETE AQUÍ
           </DanceFitButton>
 
@@ -346,7 +361,7 @@ const Index = () => {
                   variant="accent" 
                   size="lg" 
                   className="w-full"
-                  onClick={() => setShowExitIntent(false)}
+                  onClick={handleInscribirse}
                 >
                   ¡APROVECHAR DESCUENTO!
                 </DanceFitButton>

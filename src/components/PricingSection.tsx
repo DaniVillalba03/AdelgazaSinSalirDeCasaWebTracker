@@ -3,6 +3,10 @@ import { ImagePlaceholder } from "./ImagePlaceholder";
 import { CheckCircle, Gift } from "lucide-react";
 
 export const PricingSection = () => {
+  const handleInscribirse = () => {
+    window.open('https://go.hotmart.com/Y102004689J?ap=0ff3', '_blank');
+  };
+
   const bonuses = [
     {
       title: "GUÍA ALIMENTICIA",
@@ -145,7 +149,12 @@ export const PricingSection = () => {
         </div>
         
         {/* CTA Button */}
-        <DanceFitButton variant="accent" size="xl" className="mb-8">
+        <DanceFitButton 
+          variant="accent" 
+          size="xl" 
+          className="mb-8"
+          onClick={handleInscribirse}
+        >
           INSCRÍBETE AQUÍ
         </DanceFitButton>
       </div>
