@@ -7,9 +7,38 @@ import { FAQSection } from "@/components/FAQSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { PricingSection } from "@/components/PricingSection";
 import { GuaranteeSection } from "@/components/GuaranteeSection";
-import { Home, Heart, CheckCircle, Facebook, Instagram } from "lucide-react";
+import { Home, Heart, CheckCircle, Facebook, Instagram, X } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const Index = () => {
+  const [showExitIntent, setShowExitIntent] = useState(false);
+
+  useEffect(() => {
+    let mouseLeftWindow = false;
+
+    const handleMouseLeave = (e: MouseEvent) => {
+      // Detectar si el mouse sale por arriba de la ventana (típico comportamiento de salida)
+      if (e.clientY <= 0 && !mouseLeftWindow) {
+        mouseLeftWindow = true;
+        setShowExitIntent(true);
+      }
+    };
+
+    const handleMouseEnter = () => {
+      mouseLeftWindow = false;
+    };
+
+    // Solo activar en desktop, no en móvil
+    if (window.innerWidth > 768) {
+      document.addEventListener('mouseleave', handleMouseLeave);
+      document.addEventListener('mouseenter', handleMouseEnter);
+    }
+
+    return () => {
+      document.removeEventListener('mouseleave', handleMouseLeave);
+      document.removeEventListener('mouseenter', handleMouseEnter);
+    };
+  }, []);
   return (
     <div className="min-h-screen bg-white">
       {/* Header Hero Section */}
@@ -281,6 +310,62 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      {/* Exit Intent Modal */}
+      {showExitIntent && (
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
+          <div className="bg-gradient-to-br from-purple-600 to-purple-800 rounded-xl p-8 max-w-md w-full relative animate-pulse shadow-2xl">
+            <button
+              onClick={() => setShowExitIntent(false)}
+              className="absolute top-4 right-4 text-white hover:text-yellow-highlight"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            
+            <div className="text-center text-white">
+              <h2 className="font-bold-caps text-2xl mb-4 text-yellow-highlight">
+                ¡ESPERA! 🛑
+              </h2>
+              
+              <h3 className="font-bold text-xl mb-4">
+                ANTES DE IRTE...
+              </h3>
+              
+              <p className="text-lg mb-6">
+                Tenemos una <strong className="text-yellow-highlight">OFERTA ESPECIAL</strong> solo para ti
+              </p>
+              
+              <div className="bg-yellow-highlight text-purple-800 rounded-lg p-4 mb-6">
+                <h4 className="font-bold text-lg mb-2">🎁 DESCUENTO EXCLUSIVO</h4>
+                <p className="font-bold text-2xl">25% OFF</p>
+                <p className="text-sm">Solo por los próximos 10 minutos</p>
+              </div>
+              
+              <div className="space-y-3 mb-6">
+                <DanceFitButton 
+                  variant="accent" 
+                  size="lg" 
+                  className="w-full"
+                  onClick={() => setShowExitIntent(false)}
+                >
+                  ¡APROVECHAR DESCUENTO!
+                </DanceFitButton>
+                
+                <button
+                  onClick={() => setShowExitIntent(false)}
+                  className="text-white/80 hover:text-white text-sm underline"
+                >
+                  No, gracias. Continuar sin descuento
+                </button>
+              </div>
+              
+              <div className="text-xs text-white/60">
+                * Oferta válida solo una vez por usuario
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
