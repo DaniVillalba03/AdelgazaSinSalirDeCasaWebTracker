@@ -13,12 +13,15 @@ import { useState, useEffect } from "react";
 const Index = () => {
   const [showExitIntent, setShowExitIntent] = useState(false);
   const [ofertaEspecialActivada, setOfertaEspecialActivada] = useState(false);
+  const [showMobileFloatingButton, setShowMobileFloatingButton] = useState(false);
 
   useEffect(() => {
     let mouseLeftWindow = false;
+    let lastScrollY = 0;
+    let scrollUpCount = 0;
 
+    // Exit intent para desktop (mouse leave)
     const handleMouseLeave = (e: MouseEvent) => {
-      // Detectar si el mouse sale por arriba de la ventana (típico comportamiento de salida)
       if (e.clientY <= 0 && !mouseLeftWindow) {
         mouseLeftWindow = true;
         setShowExitIntent(true);
@@ -29,17 +32,72 @@ const Index = () => {
       mouseLeftWindow = false;
     };
 
-    // Solo activar en desktop, no en móvil
+    // Exit intent para móvil (scroll rápido hacia arriba)
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Detectar scroll hacia arriba rápido
+      if (currentScrollY < lastScrollY && currentScrollY < 100) {
+        scrollUpCount++;
+        
+        // Si hace scroll hacia arriba rápido 2 veces cerca del top
+        if (scrollUpCount >= 2) {
+          setShowExitIntent(true);
+          scrollUpCount = 0; // Reset counter
+        }
+      } else {
+        scrollUpCount = 0; // Reset si no es scroll hacia arriba
+      }
+      
+      lastScrollY = currentScrollY;
+    };
+
+    // Timer automático para móvil (mostrar oferta después de 30 segundos)
+    const mobileTimer = setTimeout(() => {
+      if (window.innerWidth <= 768 && !showExitIntent) {
+        setShowExitIntent(true);
+      }
+    }, 30000); // 30 segundos
+
+    // Timer para botón flotante móvil (aparecer después de 15 segundos)
+    const floatingButtonTimer = setTimeout(() => {
+      if (window.innerWidth <= 768 && !ofertaEspecialActivada && !showExitIntent) {
+        setShowMobileFloatingButton(true);
+      }
+    }, 15000); // 15 segundos
+
+    // Detección de intento de salir (beforeunload)
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      // Solo en móvil y si no se ha mostrado ya
+      if (window.innerWidth <= 768 && !showExitIntent) {
+        setShowExitIntent(true);
+        e.preventDefault();
+        e.returnValue = ''; // Requerido por algunos navegadores
+        return ''; // Para compatibilidad
+      }
+    };
+
+    // Configurar eventos según el dispositivo
     if (window.innerWidth > 768) {
+      // Desktop: mouse leave
       document.addEventListener('mouseleave', handleMouseLeave);
       document.addEventListener('mouseenter', handleMouseEnter);
+    } else {
+      // Móvil: scroll hacia arriba y beforeunload
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      window.addEventListener('beforeunload', handleBeforeUnload);
     }
 
     return () => {
+      // Cleanup todos los eventos
       document.removeEventListener('mouseleave', handleMouseLeave);
       document.removeEventListener('mouseenter', handleMouseEnter);
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+      clearTimeout(mobileTimer);
+      clearTimeout(floatingButtonTimer);
     };
-  }, []);
+  }, [showExitIntent]);
 
   const handleInscribirse = () => {
     const url = ofertaEspecialActivada 
@@ -390,6 +448,21 @@ const Index = () => {
               </div>
             </div>
           </div>
+        </div>
+      )}
+
+      {/* Botón Flotante Móvil */}
+      {showMobileFloatingButton && !showExitIntent && (
+        <div className="fixed bottom-4 right-4 z-40 md:hidden">
+          <button
+            onClick={() => {
+              setShowMobileFloatingButton(false);
+              setShowExitIntent(true);
+            }}
+            className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-800 px-6 py-3 rounded-full font-bold shadow-lg animate-bounce"
+          >
+            🎁 ¡DESCUENTO ESPECIAL!
+          </button>
         </div>
       )}
     </div>
