@@ -2,9 +2,16 @@ import { DanceFitButton } from "./DanceFitButton";
 import { ImagePlaceholder } from "./ImagePlaceholder";
 import { CheckCircle, Gift } from "lucide-react";
 
-export const PricingSection = () => {
+interface PricingSectionProps {
+  ofertaEspecialActivada?: boolean;
+}
+
+export const PricingSection = ({ ofertaEspecialActivada = false }: PricingSectionProps) => {
   const handleInscribirse = () => {
-    window.open('https://go.hotmart.com/Y102004689J?ap=0ff3', '_blank');
+    const url = ofertaEspecialActivada 
+      ? 'https://go.hotmart.com/Y102004689J?ap=5589'  // URL con descuento
+      : 'https://go.hotmart.com/Y102004689J?ap=0ff3';  // URL normal
+    window.open(url, '_blank');
   };
 
   const bonuses = [

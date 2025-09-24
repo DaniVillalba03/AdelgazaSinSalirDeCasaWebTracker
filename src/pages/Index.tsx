@@ -12,6 +12,7 @@ import { useState, useEffect } from "react";
 
 const Index = () => {
   const [showExitIntent, setShowExitIntent] = useState(false);
+  const [ofertaEspecialActivada, setOfertaEspecialActivada] = useState(false);
 
   useEffect(() => {
     let mouseLeftWindow = false;
@@ -41,7 +42,17 @@ const Index = () => {
   }, []);
 
   const handleInscribirse = () => {
-    window.open('https://go.hotmart.com/Y102004689J?ap=0ff3', '_blank');
+    const url = ofertaEspecialActivada 
+      ? 'https://go.hotmart.com/Y102004689J?ap=5589'  // URL con descuento
+      : 'https://go.hotmart.com/Y102004689J?ap=0ff3';  // URL normal
+    window.open(url, '_blank');
+  };
+
+  const handleAprovecharOferta = () => {
+    setOfertaEspecialActivada(true);  // Activar la oferta especial
+    setShowExitIntent(false);  // Cerrar el modal
+    const url = 'https://go.hotmart.com/Y102004689J?ap=5589';
+    window.open(url, '_blank');
   };
 
   return (
@@ -233,7 +244,7 @@ const Index = () => {
       </section>
 
       {/* Pricing Section */}
-      <PricingSection />
+      <PricingSection ofertaEspecialActivada={ofertaEspecialActivada} />
 
       {/* Countdown Timer */}
       <section className="bg-secondary py-12 px-4">
@@ -361,7 +372,7 @@ const Index = () => {
                   variant="accent" 
                   size="lg" 
                   className="w-full"
-                  onClick={handleInscribirse}
+                  onClick={handleAprovecharOferta}
                 >
                   ¡APROVECHAR DESCUENTO!
                 </DanceFitButton>
