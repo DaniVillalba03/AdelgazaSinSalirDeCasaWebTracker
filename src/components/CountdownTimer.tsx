@@ -7,10 +7,10 @@ interface CountdownTimerProps {
 
 export const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
   const [timeLeft, setTimeLeft] = useState({
-    days: 125,
-    hours: 1,
-    minutes: 25,
-    seconds: 55
+    days: 0,
+    hours: 0,
+    minutes: 15,
+    seconds: 0
   });
 
   useEffect(() => {
