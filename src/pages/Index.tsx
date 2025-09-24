@@ -14,6 +14,7 @@ const Index = () => {
   const [showExitIntent, setShowExitIntent] = useState(false);
   const [ofertaEspecialActivada, setOfertaEspecialActivada] = useState(false);
   const [showMobileFloatingButton, setShowMobileFloatingButton] = useState(false);
+  const [usuarioRechazoOferta, setUsuarioRechazoOferta] = useState(false);
 
   useEffect(() => {
     let mouseLeftWindow = false;
@@ -22,7 +23,7 @@ const Index = () => {
 
     // Exit intent para desktop (mouse leave)
     const handleMouseLeave = (e: MouseEvent) => {
-      if (e.clientY <= 0 && !mouseLeftWindow) {
+      if (e.clientY <= 0 && !mouseLeftWindow && !ofertaEspecialActivada) {
         mouseLeftWindow = true;
         setShowExitIntent(true);
       }
@@ -41,7 +42,7 @@ const Index = () => {
         scrollUpCount++;
         
         // Si hace scroll hacia arriba rápido 2 veces cerca del top
-        if (scrollUpCount >= 2) {
+        if (scrollUpCount >= 2 && !ofertaEspecialActivada) {
           setShowExitIntent(true);
           scrollUpCount = 0; // Reset counter
         }
@@ -54,7 +55,7 @@ const Index = () => {
 
     // Timer automático para móvil (mostrar oferta después de 30 segundos)
     const mobileTimer = setTimeout(() => {
-      if (window.innerWidth <= 768 && !showExitIntent) {
+      if (window.innerWidth <= 768 && !showExitIntent && !ofertaEspecialActivada) {
         setShowExitIntent(true);
       }
     }, 30000); // 30 segundos
@@ -68,8 +69,8 @@ const Index = () => {
 
     // Detección de intento de salir (beforeunload)
     const handleBeforeUnload = (e: BeforeUnloadEvent) => {
-      // Solo en móvil y si no se ha mostrado ya
-      if (window.innerWidth <= 768 && !showExitIntent) {
+      // Solo en móvil y si no se ha mostrado ya y no se aceptó la oferta
+      if (window.innerWidth <= 768 && !showExitIntent && !ofertaEspecialActivada) {
         setShowExitIntent(true);
         e.preventDefault();
         e.returnValue = ''; // Requerido por algunos navegadores
@@ -97,7 +98,7 @@ const Index = () => {
       clearTimeout(mobileTimer);
       clearTimeout(floatingButtonTimer);
     };
-  }, [showExitIntent]);
+  }, [showExitIntent, ofertaEspecialActivada]);
 
   const handleInscribirse = () => {
     const url = ofertaEspecialActivada 
@@ -109,8 +110,14 @@ const Index = () => {
   const handleAprovecharOferta = () => {
     setOfertaEspecialActivada(true);  // Activar la oferta especial
     setShowExitIntent(false);  // Cerrar el modal
+    // No marcar como rechazado, permitir que no vuelva a aparecer
     const url = 'https://go.hotmart.com/Y102004689J?ap=5589';
     window.open(url, '_blank');
+  };
+
+  const handleRechazarOferta = () => {
+    setShowExitIntent(false);  // Cerrar el modal
+    // NO marcar usuarioRechazoOferta como true para que siga apareciendo
   };
 
   return (
@@ -436,7 +443,7 @@ const Index = () => {
                 </DanceFitButton>
                 
                 <button
-                  onClick={() => setShowExitIntent(false)}
+                  onClick={handleRechazarOferta}
                   className="text-white/80 hover:text-white text-sm underline"
                 >
                   No, gracias. Continuar sin descuento
@@ -452,7 +459,7 @@ const Index = () => {
       )}
 
       {/* Botón Flotante Móvil */}
-      {showMobileFloatingButton && !showExitIntent && (
+      {showMobileFloatingButton && !showExitIntent && !ofertaEspecialActivada && (
         <div className="fixed bottom-4 right-4 z-40 md:hidden">
           <button
             onClick={() => {
