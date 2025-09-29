@@ -7,7 +7,6 @@ interface CountdownTimerProps {
 
 export const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
   const [timeLeft, setTimeLeft] = useState({
-    days: 0,
     hours: 0,
     minutes: 15,
     seconds: 0
@@ -22,8 +21,6 @@ export const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
           return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
         } else if (prev.hours > 0) {
           return { ...prev, hours: prev.hours - 1, minutes: 59, seconds: 59 };
-        } else if (prev.days > 0) {
-          return { ...prev, days: prev.days - 1, hours: 23, minutes: 59, seconds: 59 };
         }
         return prev;
       });
@@ -41,13 +38,7 @@ export const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
         </h3>
       </div>
       
-      <div className="grid grid-cols-4 gap-4 max-w-lg mx-auto">
-        <div className="text-center">
-          <div className="bg-yellow-highlight text-accent-foreground rounded-lg p-4 mb-2">
-            <span className="text-3xl font-bold">{timeLeft.days.toString().padStart(2, '0')}</span>
-          </div>
-          <span className="text-secondary-foreground font-bold text-sm">Día(s)</span>
-        </div>
+      <div className="grid grid-cols-3 gap-4 max-w-lg mx-auto">
         <div className="text-center">
           <div className="bg-yellow-highlight text-accent-foreground rounded-lg p-4 mb-2">
             <span className="text-3xl font-bold">{timeLeft.hours.toString().padStart(2, '0')}</span>
