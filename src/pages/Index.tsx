@@ -393,7 +393,7 @@ const Index = () => {
           </div>
 
           <div className="text-center text-sm text-secondary-foreground">
-            <p className="mb-2">© 2026 – Adelgaza sin salir de casa | Todos los derechos reservados</p>
+            <p className="mb-2">© 2027 – Adelgaza sin salir de casa | Todos los derechos reservados</p>
             <p>
               DESCARGOS DE RESPONSABILIDAD IMPORTANTES: Este sitio no es parte del sitio web de Facebook o Facebook, Inc. 
               Además, este sitio no está respaldado por Facebook de ninguna manera. FACEBOOK es una marca registrada de FACEBOOK, Inc.
