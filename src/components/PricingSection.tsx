@@ -1,5 +1,7 @@
 import { DanceFitButton } from "./DanceFitButton";
 import { ImagePlaceholder } from "./ImagePlaceholder";
+import { CountdownTimer } from "./CountdownTimer";
+import { PaymentLogos } from "./PaymentLogos";
 import { CheckCircle, Gift } from "lucide-react";
 
 interface PricingSectionProps {
@@ -40,6 +42,16 @@ export const PricingSection = ({ ofertaEspecialActivada = false }: PricingSectio
   return (
     <section className="bg-white py-12 px-4">
       <div className="max-w-4xl mx-auto text-center">
+        {/* Limited Spots Available */}
+        <div className="mb-8">
+          <h1 className="font-bold-caps text-5xl text-yellow-highlight mb-2">
+            25<span className="text-secondary">CUPOS</span>
+          </h1>
+          <h2 className="font-bold-caps text-2xl text-secondary mb-4">
+            DISPONIBLES HASTA HOY
+          </h2>
+        </div>
+
         {/* Course Levels */}
         <h2 className="font-bold-caps text-2xl text-secondary mb-8">
           TENDRÁS ACCESO A <span className="text-yellow-highlight">6 NIVELES DE DIFICULTAD</span>
@@ -64,14 +76,21 @@ export const PricingSection = ({ ofertaEspecialActivada = false }: PricingSectio
         
         {/* Price Display */}
         <div className="mb-8">
-          <ImagePlaceholder 
-            title="PRECIO ESPECIAL - $50 USD"
-            aspectRatio="wide"
-            className="max-w-md mx-auto"
-          />
-          <p className="text-secondary text-lg mt-4">
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <span className="text-4xl font-bold text-gray-400 line-through">$300</span>
+            <span className="text-6xl font-bold text-green-500">$49.99</span>
+          </div>
+          <p className="text-secondary text-lg">
             (Lo tendrás convertido a tu moneda local)
           </p>
+        </div>
+
+        {/* Countdown Timer */}
+        <div className="mb-8">
+          <p className="text-secondary font-bold text-lg mb-4">
+            LA OFERTA TERMINARÁ EN...
+          </p>
+          <CountdownTimer />
         </div>
         
         {/* Progress Bar */}
@@ -162,8 +181,11 @@ export const PricingSection = ({ ofertaEspecialActivada = false }: PricingSectio
           className="mb-8"
           onClick={handleInscribirse}
         >
-          INSCRÍBETE AQUÍ
+          INSCRÍBETE AL PROGRAMA AQUÍ
         </DanceFitButton>
+
+        {/* Payment Logos */}
+        <PaymentLogos />
       </div>
     </section>
   );
