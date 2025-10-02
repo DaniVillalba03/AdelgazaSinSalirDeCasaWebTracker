@@ -209,10 +209,10 @@ const Index = () => {
       <section className="bg-black py-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-12">
-            <ImagePlaceholder 
-              title="CURSO EN VARIOS FORMATOS - Desktop, Mobile, Tablet"
-              aspectRatio="wide"
-              className="mb-4"
+            <img
+              src="/assets/images/program/cursovariosformatos.png"
+              alt="CURSO EN VARIOS FORMATOS - Desktop, Mobile, Tablet"
+              className="w-full h-auto object-contain rounded-lg shadow-lg"
             />
           </div>
 
