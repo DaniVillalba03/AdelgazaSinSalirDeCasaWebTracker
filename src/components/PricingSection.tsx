@@ -42,11 +42,23 @@ export const PricingSection = ({ ofertaEspecialActivada = false }: PricingSectio
   return (
     <section className="bg-black py-12 px-4">
       <div className="max-w-6xl mx-auto">
+        {/* Header Section */}
+        <div className="text-center mb-12">
+          <h2 className="font-bold-caps text-2xl text-white mb-4">
+            TENDRÁS ACCESO A <span className="text-yellow-highlight">6 NIVELES DE DIFICULTAD</span>
+          </h2>
+          <h3 className="font-bold-caps text-lg text-white mb-6">
+            EL PRECIO NORMAL POR CADA NIVEL ES DE 50 DÓLARES, EL PROGRAMA COMPLETO
+          </h3>
+          <h3 className="font-bold-caps text-xl text-red-500 mb-8">
+            CUESTA 300 DÓLARES
+          </h3>
+        </div>
+
         {/* Two Column Layout */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Left Column - Text Content */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Column - 25 CUPOS Text */}
           <div className="text-center lg:text-left">
-            {/* 25 CUPOS */}
             <h1 className="font-bold-caps text-6xl text-yellow-highlight mb-2">
               25<span className="text-white">CUPOS</span>
             </h1>
@@ -54,6 +66,87 @@ export const PricingSection = ({ ofertaEspecialActivada = false }: PricingSectio
               DISPONIBLES HASTA HOY
             </h2>
           </div>
+
+          {/* Right Column - Course Modules Grid */}
+          <div>
+            <div className="grid grid-cols-2 gap-4">
+              <ImagePlaceholder 
+                title="NIVEL BÁSICO 1"
+                aspectRatio="video"
+                className="rounded-lg"
+              />
+              <ImagePlaceholder 
+                title="NIVEL BÁSICO 2"
+                aspectRatio="video"
+                className="rounded-lg"
+              />
+              <ImagePlaceholder 
+                title="NIVEL INTERMEDIO 1"
+                aspectRatio="video"
+                className="rounded-lg"
+              />
+              <ImagePlaceholder 
+                title="NIVEL INTERMEDIO 2"
+                aspectRatio="video"
+                className="rounded-lg"
+              />
+              <ImagePlaceholder 
+                title="NIVEL AVANZADO 1"
+                aspectRatio="video"
+                className="rounded-lg"
+              />
+              <ImagePlaceholder 
+                title="NIVEL AVANZADO 2"
+                aspectRatio="video"
+                className="rounded-lg"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Section */}
+        <div className="text-center mt-12">
+          <h2 className="font-bold-caps text-4xl text-white mb-8">
+            LLEVA <span className="text-yellow-highlight">TODOS</span> LOS NIVELES POR EL{" "}
+            <span className="text-yellow-highlight">PRECIO DE UNO</span>
+          </h2>
+        </div>
+      </div>
+
+      {/* White Price Section */}
+      <div className="bg-white py-12">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Price Display */}
+          <div className="mb-8">
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <span className="text-4xl font-bold text-gray-400 line-through">$300</span>
+              <span className="text-6xl font-bold text-green-500">$49.99</span>
+            </div>
+            <p className="text-secondary text-lg">
+              (Lo tendrás convertido a tu moneda local)
+            </p>
+          </div>
+
+          {/* Countdown Timer */}
+          <div className="mb-8">
+            <p className="text-secondary font-bold text-lg mb-4">
+              LA OFERTA TERMINARÁ EN...
+            </p>
+            <CountdownTimer />
+          </div>
+          
+          {/* CTA Button */}
+          <DanceFitButton 
+            variant="accent" 
+            size="xl" 
+            className="mb-8"
+            onClick={handleInscribirse}
+          >
+            INSCRÍBETE AL PROGRAMA AQUÍ
+          </DanceFitButton>
+
+          {/* Payment Logos */}
+          <PaymentLogos />
         </div>
       </div>
     </section>
