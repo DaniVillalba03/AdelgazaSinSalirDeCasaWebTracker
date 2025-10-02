@@ -197,7 +197,10 @@ const Index = () => {
                 alt="COLLAGE DE TESTIMONIOS - Antes y Después"
                 className="w-full h-auto object-contain rounded-lg shadow-lg mb-6"
               />
-              
+            </div>
+
+            {/* Right Column - Text */}
+            <div className="text-center flex flex-col justify-center">
               <h3 className="font-bold-caps text-xl text-white mb-0">
                 CADA DÍA SON MÁS PERSONAS QUE SE UNEN A NUESTRA COMUNIDAD{" "}
                 <span className="text-yellow-highlight">«ADELGAZA SIN SALIR DE CASA»</span>{" "}
@@ -206,19 +209,25 @@ const Index = () => {
                 CON NUESTRA METODOLOGÍA.
               </h3>
             </div>
+          </div>
 
-            {/* Right Column - Course Formats */}
-            <div className="text-center">
-              <img
-                src="/assets/images/program/cursovariosformatos.png"
-                alt="CURSO EN VARIOS FORMATOS - Desktop, Mobile, Tablet"
-                className="w-full h-auto object-contain rounded-lg shadow-lg mb-6"
-              />
-              
+          {/* Second Row - Course Formats */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center mt-16">
+            {/* Left Column - Text */}
+            <div className="text-center flex flex-col justify-center lg:order-1">
               <h3 className="font-bold-caps text-xl text-white mb-0">
                 TENDRÁS <span className="text-yellow-highlight">CLASES DE LUNES A VIERNES</span>{" "}
                 POR TODO EL AÑO Y EL <span className="text-yellow-highlight">HORARIO LO PONES TÚ</span>
               </h3>
+            </div>
+
+            {/* Right Column - Course Formats */}
+            <div className="text-center lg:order-2">
+              <img
+                src="/assets/images/program/cursovariosformatos.png"
+                alt="CURSO EN VARIOS FORMATOS - Desktop, Mobile, Tablet"
+                className="w-full h-auto object-contain rounded-lg shadow-lg"
+              />
             </div>
           </div>
         </div>
