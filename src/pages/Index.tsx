@@ -15,6 +15,8 @@ const Index = () => {
   const [ofertaEspecialActivada, setOfertaEspecialActivada] = useState(false);
   const [showMobileFloatingButton, setShowMobileFloatingButton] = useState(false);
   const [usuarioRechazoOferta, setUsuarioRechazoOferta] = useState(false);
+  const [expandedBenefits, setExpandedBenefits] = useState(false);
+  const [expandedMethod, setExpandedMethod] = useState(false);
 
   useEffect(() => {
     let mouseLeftWindow = false;
@@ -265,57 +267,93 @@ const Index = () => {
 
       {/* Instructors Section */}
       <section className="bg-white py-12 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-8">
-            <ImagePlaceholder 
-              title="PROFESORES - Natalia Alarcón y Cristian Espinosa"
-              aspectRatio="wide"
-            />
-          </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Left Column - Image */}
+            <div className="text-center">
+              <img
+                src="/assets/images/program/PROFES-2.jpg"
+                alt="PROFESORES - Natalia Alarcón y Cristian Espinosa"
+                className="w-full h-auto max-w-md mx-auto object-contain rounded-lg shadow-lg"
+              />
+            </div>
 
-          <h3 className="font-bold-caps text-2xl text-secondary mb-6">
-            ¿QUIENES SON LOS PROFESORES Y POR QUÉ PUEDEN AYUDARTE?
-          </h3>
+            {/* Right Column - Text Content with Expandable Sections */}
+            <div className="text-center lg:text-left">
+              <h3 className="font-bold-caps text-2xl text-secondary mb-6 text-yellow-highlight">
+                ¿QUIENES SON LOS PROFESORES Y POR QUÉ PUEDEN AYUDARTE?
+              </h3>
 
-          <p className="text-lg text-secondary leading-relaxed mb-8">
-            Desarrollado por <strong>NATALIA ALARCÓN Y CRISTIAN ESPINOSA</strong> artistas, bailarines y entrenadores profesionales 
-            amantes de la actividad física, con más de 15 años de experiencia y un gran recorrido internacional.
-          </p>
+              <p className="text-lg text-secondary leading-relaxed mb-8">
+                Desarrollado por <strong>NATALIA ALARCÓN Y CRISTIAN ESPINOSA</strong> artistas, bailarines y entrenadores profesionales 
+                amantes de la actividad física, con más de 15 años de experiencia y un gran recorrido internacional.
+              </p>
 
-          <p className="text-lg text-secondary leading-relaxed mb-12">
-            Te dan la garantía de que al hacer parte de esta bella comunidad, tendrás una metodología comprobada 
-            y altamente efectiva que te ayudará a lograr tus objetivos físicos, adquirir hábitos más saludables y mejorar tu calidad de vida.
-          </p>
+              <p className="text-lg text-secondary leading-relaxed mb-8">
+                Te dan la garantía de que al hacer parte de esta bella comunidad, tendrás una metodología comprobada 
+                y altamente efectiva que te ayudará a lograr tus objetivos físicos, adquirir hábitos más saludables y mejorar tu calidad de vida.
+              </p>
 
-          {/* Benefits List */}
-          <div className="grid md:grid-cols-2 gap-4 mb-12">
-            {[
-              "Tonificar y fortalecer tu cuerpo",
-              "Prevenir y disminuir el sobrepeso", 
-              "Adquirir hábitos saludables",
-              "Transformar tu cuerpo sin gastar en gimnasios",
-              "Mejorar tu condición física",
-              "Prevenir enfermedades gracias a la actividad física",
-              "Ahorrar tiempo, con una metodología de solo 45 minutos al día",
-              "Disminuir el estrés y aumentar tu autoestima"
-            ].map((benefit, index) => (
-              <div key={index} className="flex items-center gap-3 text-left">
-                <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
-                <span className="font-bold text-secondary">{benefit}</span>
+              {/* Expandable Section 1 - Benefits */}
+              <div className="mb-6">
+                <div 
+                  className="bg-purple-600 text-white p-4 rounded-lg cursor-pointer hover:bg-purple-700 transition-colors"
+                  onClick={() => setExpandedBenefits(!expandedBenefits)}
+                >
+                  <h4 className="font-bold text-lg flex items-center justify-between">
+                    ¿QUÉ MÁS VAS A LOGRAR?
+                    <span className="text-2xl transform transition-transform duration-200" style={{
+                      transform: expandedBenefits ? 'rotate(45deg)' : 'rotate(0deg)'
+                    }}>+</span>
+                  </h4>
+                </div>
+                {expandedBenefits && (
+                  <div className="bg-purple-500 text-white p-4 rounded-b-lg">
+                    <div className="grid md:grid-cols-2 gap-4">
+                      {[
+                        "✅ Tonificar y fortalecer tu cuerpo",
+                        "✅ Prevenir y disminuir el sobrepeso", 
+                        "✅ Adquirir hábitos saludables",
+                        "✅ Transformar tu cuerpo sin gastar en gimnasios",
+                        "✅ Mejorar tu condición física",
+                        "✅ Prevenir enfermedades gracias a la actividad física",
+                        "✅ Ahorrar tiempo, con una metodología de solo 45 minutos al día",
+                        "✅ Disminuir el estrés y aumentar tu autoestima"
+                      ].map((benefit, index) => (
+                        <div key={index} className="text-left">
+                          <span className="text-white">{benefit}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
-            ))}
-          </div>
 
-          <div className="bg-accent/10 p-8 rounded-xl">
-            <h3 className="font-bold-caps text-2xl text-secondary mb-4">
-              ¿CÓMO LO VAS A LOGRAR?
-            </h3>
-            <p className="text-lg text-secondary leading-relaxed">
-              Nuestro método de entrenamiento es de tan solo <strong>45 minutos al día</strong>, 
-              las rutinas de ejercicio las haremos <strong>juntos de manera virtual</strong>, 
-              trabajaremos <strong>5 días por semana (DE LUNES A VIERNES)</strong> y tendrás 
-              acompañamiento constante de nuestra parte, podrás hacernos preguntas cuando quieras.
-            </p>
+              {/* Expandable Section 2 - Method */}
+              <div className="mb-6">
+                <div 
+                  className="bg-purple-600 text-white p-4 rounded-lg cursor-pointer hover:bg-purple-700 transition-colors"
+                  onClick={() => setExpandedMethod(!expandedMethod)}
+                >
+                  <h4 className="font-bold text-lg flex items-center justify-between">
+                    ¿CÓMO LO VAS A LOGRAR?
+                    <span className="text-2xl transform transition-transform duration-200" style={{
+                      transform: expandedMethod ? 'rotate(45deg)' : 'rotate(0deg)'
+                    }}>+</span>
+                  </h4>
+                </div>
+                {expandedMethod && (
+                  <div className="bg-purple-500 text-white p-4 rounded-b-lg">
+                    <p className="text-white leading-relaxed">
+                      Nuestro método de entrenamiento es de tan solo <strong className="text-yellow-400">45 minutos al día</strong>, 
+                      las rutinas de ejercicio las haremos <strong className="text-yellow-400">juntos de manera virtual</strong>, 
+                      trabajaremos <strong className="text-yellow-400">5 días por semana (DE LUNES A VIERNES)</strong> y tendrás 
+                      acompañamiento constante de nuestra parte, <strong className="text-yellow-400">podrás hacernos preguntas cuando quieras</strong>.
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </section>
