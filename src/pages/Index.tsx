@@ -229,10 +229,14 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Single horizontal line text at bottom */}
+          {/* Horizontal text lines at bottom */}
           <div className="text-center">
-            <h3 className="font-bold-caps text-2xl lg:text-3xl text-white leading-tight whitespace-nowrap overflow-hidden text-ellipsis">
-              CADA DÍA SON MÁS PERSONAS QUE SE UNEN A NUESTRA COMUNIDAD <span className="text-yellow-highlight">«ADELGAZA SIN SALIR DE CASA»</span> Y ESTÁN TOTALMENTE FELICES Y MUY AGRADECIDOS CON LOS <span className="text-yellow-highlight">RESULTADOS OBTENIDOS</span> CON NUESTRA METODOLOGÍA.
+            <h3 className="font-bold-caps text-2xl lg:text-3xl text-white leading-tight mb-0">
+              CADA DÍA SON MÁS PERSONAS QUE SE UNEN A NUESTRA COMUNIDAD{" "}
+              <span className="text-yellow-highlight">«ADELGAZA SIN SALIR DE CASA»</span>{" "}
+              Y ESTÁN TOTALMENTE FELICES Y MUY AGRADECIDOS CON LOS{" "}
+              <span className="text-yellow-highlight">RESULTADOS OBTENIDOS</span>{" "}
+              CON NUESTRA METODOLOGÍA.
             </h3>
           </div>
         </div>
