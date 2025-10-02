@@ -229,23 +229,20 @@ const Index = () => {
                 alt="ABDOMEN - Ejercicios para abdomen plano"
                 className="w-full h-auto aspect-square object-cover rounded-lg shadow-lg mb-4"
               />
-              <h4 className="font-bold-caps text-yellow-highlight text-lg">ABDOMEN</h4>
             </div>
             <div className="text-center">
-              <ImagePlaceholder 
-                title="GLÚTEOS - Ejercicios para glúteos firmes"
-                aspectRatio="square"
-                className="mb-4"
+              <img
+                src="/assets/images/program/miniaturagluteo.jpg"
+                alt="GLÚTEOS - Ejercicios para glúteos firmes"
+                className="w-full h-auto aspect-square object-cover rounded-lg shadow-lg mb-4"
               />
-              <h4 className="font-bold-caps text-yellow-highlight text-lg">GLÚTEOS</h4>
             </div>
             <div className="text-center">
-              <ImagePlaceholder 
-                title="BRAZOS - Ejercicios para brazos tonificados"
-                aspectRatio="square"
-                className="mb-4"
+              <img
+                src="/assets/images/program/miniaturabrazo.jpg"
+                alt="BRAZOS - Ejercicios para brazos tonificados"
+                className="w-full h-auto aspect-square object-cover rounded-lg shadow-lg mb-4"
               />
-              <h4 className="font-bold-caps text-yellow-highlight text-lg">BRAZOS</h4>
             </div>
           </div>
         </div>
