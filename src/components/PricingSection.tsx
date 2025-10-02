@@ -42,20 +42,7 @@ export const PricingSection = ({ ofertaEspecialActivada = false }: PricingSectio
   return (
     <section className="bg-black py-12 px-4">
       <div className="max-w-6xl mx-auto">
-        {/* Header Section */}
-        <div className="text-center mb-12">
-          <h2 className="font-bold-caps text-2xl text-white mb-4">
-            TENDRÁS ACCESO A <span className="text-yellow-highlight">6 NIVELES DE DIFICULTAD</span>
-          </h2>
-          <h3 className="font-bold-caps text-lg text-white mb-6">
-            EL PRECIO NORMAL POR CADA NIVEL ES DE 50 DÓLARES, EL PROGRAMA COMPLETO
-          </h3>
-          <h3 className="font-bold-caps text-xl text-red-500 mb-8">
-            CUESTA 300 DÓLARES
-          </h3>
-        </div>
-
-        {/* Two Column Layout */}
+        {/* Two Column Layout - Independent Block */}
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - 25 CUPOS Text */}
           <div className="text-center lg:text-left">
