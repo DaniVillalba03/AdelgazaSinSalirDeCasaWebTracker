@@ -359,6 +359,72 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Course Modules Section - Black Background */}
+      <section className="bg-black py-16 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Top Section */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-white mb-4">
+              TENDRÁS ACCESO A <span className="text-yellow-400">6 NIVELES DE DIFICULTAD</span>
+            </h2>
+            <p className="text-white text-lg mb-2">
+              EL PRECIO NORMAL POR CADA NIVEL ES DE 50 DÓLARES, EL PROGRAMA COMPLETO
+            </p>
+            <p className="text-red-500 text-lg font-bold">
+              CUESTA <span className="line-through">300 DÓLARES</span>
+            </p>
+          </div>
+
+          {/* Course Image */}
+          <div className="mb-8">
+            <img
+              src="/assets/images/program/MODULOS-min.png"
+              alt="MÓDULOS DEL CURSO - 6 Niveles de dificultad"
+              className="w-full h-auto max-w-2xl mx-auto object-contain"
+            />
+          </div>
+
+          {/* Main Offer Text */}
+          <div className="mb-8">
+            <h3 className="text-3xl font-bold text-white mb-4">
+              LLEVA <span className="text-yellow-400">TODOS</span> LOS NIVELES POR EL <span className="text-yellow-400">PRECIO DE UNO</span>
+            </h3>
+          </div>
+
+          {/* Pricing */}
+          <div className="mb-8">
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <span className="text-gray-400 text-3xl line-through">$300</span>
+              <span className="text-green-400 text-5xl font-bold">$49.99</span>
+            </div>
+            <p className="text-white text-sm">
+              (La oferta convertida a tu moneda local)
+            </p>
+          </div>
+
+          {/* Countdown Timer */}
+          <div className="mb-8">
+            <p className="text-yellow-400 text-xl font-bold mb-4">
+              LA OFERTA TERMINARÁ EN...
+            </p>
+            <CountdownTimer />
+          </div>
+
+          {/* CTA Button */}
+          <div className="mb-8">
+            <DanceFitButton 
+              variant="primary"
+              className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold py-4 px-8 rounded-full text-xl shadow-lg transform hover:scale-105 transition-all duration-200"
+            >
+              INSCRÍBETE AL PROGRAMA AQUÍ
+            </DanceFitButton>
+          </div>
+
+          {/* Payment Logos */}
+          <PaymentLogos />
+        </div>
+      </section>
+
       {/* Pricing Section */}
       <PricingSection ofertaEspecialActivada={ofertaEspecialActivada} />
 
