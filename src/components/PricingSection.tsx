@@ -40,46 +40,88 @@ export const PricingSection = ({ ofertaEspecialActivada = false }: PricingSectio
   ];
 
   return (
-    <section className="bg-white py-12 px-4">
-      <div className="max-w-4xl mx-auto text-center">
-        {/* Limited Spots Available */}
-        <div className="mb-8">
-          <h1 className="font-bold-caps text-5xl text-yellow-highlight mb-2">
-            25<span className="text-secondary">CUPOS</span>
-          </h1>
-          <h2 className="font-bold-caps text-2xl text-secondary mb-4">
-            DISPONIBLES HASTA HOY
+    <section className="bg-black py-12 px-4">
+      <div className="max-w-6xl mx-auto">
+        {/* Header Section */}
+        <div className="text-center mb-12">
+          <h2 className="font-bold-caps text-2xl text-white mb-4">
+            TENDRÁS ACCESO A <span className="text-yellow-highlight">6 NIVELES DE DIFICULTAD</span>
           </h2>
+          <h3 className="font-bold-caps text-lg text-white mb-6">
+            EL PRECIO NORMAL POR CADA NIVEL ES DE 50 DÓLARES, EL PROGRAMA COMPLETO
+          </h3>
+          <h3 className="font-bold-caps text-xl text-red-500 mb-8">
+            CUESTA 300 DÓLARES
+          </h3>
         </div>
 
-        {/* Course Levels */}
-        <h2 className="font-bold-caps text-2xl text-secondary mb-8">
-          TENDRÁS ACCESO A <span className="text-yellow-highlight">6 NIVELES DE DIFICULTAD</span>
-        </h2>
-        
-        <h3 className="font-bold-caps text-lg text-secondary mb-6">
-          EL PRECIO NORMAL POR CADA NIVEL ES DE 50 DOLARES, EL PROGRAMA COMPLETO CUESTA{" "}
-          <span className="text-yellow-highlight">300 DOLARES</span>
-        </h3>
-        
-        <div className="mb-8">
-          <ImagePlaceholder 
-            title="MÓDULOS DEL CURSO - 6 Niveles de dificultad"
-            aspectRatio="wide"
-          />
-        </div>
-        
-        <h2 className="font-bold-caps text-4xl text-secondary mb-8">
-          LLEVA <span className="text-yellow-highlight">TODOS</span> LOS NIVELES POR EL{" "}
-          <span className="text-yellow-highlight">PRECIO DE UNO</span>
-        </h2>
-        
-        {/* Price Display */}
-        <div className="mb-8">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <span className="text-4xl font-bold text-gray-400 line-through">$300</span>
-            <span className="text-6xl font-bold text-green-500">$49.99</span>
+        {/* Two Column Layout */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Column - Limited Spots */}
+          <div className="text-center lg:text-left">
+            <h1 className="font-bold-caps text-6xl text-yellow-highlight mb-2">
+              25<span className="text-white">CUPOS</span>
+            </h1>
+            <h2 className="font-bold-caps text-2xl text-white mb-4">
+              DISPONIBLES HASTA HOY
+            </h2>
           </div>
+
+          {/* Right Column - Course Modules Grid */}
+          <div>
+            <div className="grid grid-cols-2 gap-4 mb-8">
+              <ImagePlaceholder 
+                title="NIVEL BÁSICO 1"
+                aspectRatio="video"
+                className="rounded-lg"
+              />
+              <ImagePlaceholder 
+                title="NIVEL BÁSICO 2"
+                aspectRatio="video"
+                className="rounded-lg"
+              />
+              <ImagePlaceholder 
+                title="NIVEL INTERMEDIO 1"
+                aspectRatio="video"
+                className="rounded-lg"
+              />
+              <ImagePlaceholder 
+                title="NIVEL INTERMEDIO 2"
+                aspectRatio="video"
+                className="rounded-lg"
+              />
+              <ImagePlaceholder 
+                title="NIVEL AVANZADO 1"
+                aspectRatio="video"
+                className="rounded-lg"
+              />
+              <ImagePlaceholder 
+                title="NIVEL AVANZADO 2"
+                aspectRatio="video"
+                className="rounded-lg"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Section */}
+        <div className="text-center mt-12">
+          <h2 className="font-bold-caps text-4xl text-white mb-8">
+            LLEVA <span className="text-yellow-highlight">TODOS</span> LOS NIVELES POR EL{" "}
+            <span className="text-yellow-highlight">PRECIO DE UNO</span>
+          </h2>
+        </div>
+      </div>
+
+      {/* White Price Section */}
+      <div className="bg-white py-12">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Price Display */}
+          <div className="mb-8">
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <span className="text-4xl font-bold text-gray-400 line-through">$300</span>
+              <span className="text-6xl font-bold text-green-500">$49.99</span>
+            </div>
           <p className="text-secondary text-lg">
             (Lo tendrás convertido a tu moneda local)
           </p>
@@ -186,6 +228,7 @@ export const PricingSection = ({ ofertaEspecialActivada = false }: PricingSectio
 
         {/* Payment Logos */}
         <PaymentLogos />
+        </div>
       </div>
     </section>
   );
