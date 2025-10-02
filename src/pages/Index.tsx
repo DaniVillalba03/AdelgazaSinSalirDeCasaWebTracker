@@ -204,7 +204,7 @@ const Index = () => {
             <div className="flex flex-col">
               {/* Community text above image */}
               <div className="text-center flex items-center justify-center mb-8">
-                <h3 className="font-bold-caps text-xl lg:text-2xl text-white leading-tight">
+                <h3 className="font-bold-caps text-lg lg:text-xl text-white leading-tight">
                   CADA DÍA SON MÁS PERSONAS QUE SE UNEN A NUESTRA COMUNIDAD{" "}
                   <span className="text-yellow-highlight">«ADELGAZA SIN SALIR DE CASA»</span>{" "}
                   Y ESTÁN TOTALMENTE FELICES Y MUY AGRADECIDOS CON LOS{" "}
@@ -226,7 +226,7 @@ const Index = () => {
 
           {/* Moved schedule text to bottom as horizontal line */}
           <div className="text-center">
-            <h3 className="font-bold-caps text-xl lg:text-2xl text-white leading-tight">
+            <h3 className="font-bold-caps text-lg lg:text-xl text-white leading-tight">
               TENDRÁS <span className="text-yellow-highlight">CLASES DE LUNES A VIERNES</span>{" "}
               POR TODO EL AÑO Y EL <span className="text-yellow-highlight">HORARIO LO PONES TÚ</span>
             </h3>
@@ -265,27 +265,36 @@ const Index = () => {
 
       {/* Instructors Section */}
       <section className="bg-white py-12 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-8">
-            <ImagePlaceholder 
-              title="PROFESORES - Natalia Alarcón y Cristian Espinosa"
-              aspectRatio="wide"
-            />
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Image */}
+            <div className="text-center">
+              <img
+                src="/assets/images/program/PROFES-2.jpg"
+                alt="PROFESORES - Natalia Alarcón y Cristian Espinosa"
+                className="w-full h-auto max-w-md mx-auto object-contain rounded-lg shadow-lg"
+              />
+            </div>
+
+            {/* Right Column - Text Content */}
+            <div className="text-center lg:text-left">
+              <h3 className="font-bold-caps text-2xl text-secondary mb-6 text-yellow-highlight">
+                ¿QUIENES SON LOS PROFESORES Y POR QUÉ PUEDEN AYUDARTE?
+              </h3>
+
+              <p className="text-lg text-secondary leading-relaxed mb-8">
+                Desarrollado por <strong>NATALIA ALARCÓN Y CRISTIAN ESPINOSA</strong> artistas, bailarines y entrenadores profesionales 
+                amantes de la actividad física, con más de 15 años de experiencia y un gran recorrido internacional.
+              </p>
+
+              <p className="text-lg text-secondary leading-relaxed mb-12">
+                Te dan la garantía de que al hacer parte de esta bella comunidad, tendrás una metodología comprobada 
+                y altamente efectiva que te ayudará a lograr tus objetivos físicos, adquirir hábitos más saludables y mejorar tu calidad de vida.
+              </p>
+            </div>
           </div>
-
-          <h3 className="font-bold-caps text-2xl text-secondary mb-6">
-            ¿QUIENES SON LOS PROFESORES Y POR QUÉ PUEDEN AYUDARTE?
-          </h3>
-
-          <p className="text-lg text-secondary leading-relaxed mb-8">
-            Desarrollado por <strong>NATALIA ALARCÓN Y CRISTIAN ESPINOSA</strong> artistas, bailarines y entrenadores profesionales 
-            amantes de la actividad física, con más de 15 años de experiencia y un gran recorrido internacional.
-          </p>
-
-          <p className="text-lg text-secondary leading-relaxed mb-12">
-            Te dan la garantía de que al hacer parte de esta bella comunidad, tendrás una metodología comprobada 
-            y altamente efectiva que te ayudará a lograr tus objetivos físicos, adquirir hábitos más saludables y mejorar tu calidad de vida.
-          </p>
+        </div>
+      </section>
 
           {/* Benefits List */}
           <div className="grid md:grid-cols-2 gap-4 mb-12">
