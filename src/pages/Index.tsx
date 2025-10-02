@@ -202,8 +202,8 @@ const Index = () => {
             {/* Right Column - Community Text + Image */}
             <div className="flex flex-col">
               {/* Community text above image */}
-              <div className="text-center lg:text-left mb-8">
-                <h3 className="font-bold-caps text-2xl lg:text-3xl text-white leading-tight">
+              <div className="text-center flex items-center justify-center mb-8">
+                <h3 className="font-bold-caps text-xl lg:text-2xl text-white leading-tight">
                   CADA DÍA SON MÁS PERSONAS QUE SE UNEN A NUESTRA COMUNIDAD{" "}
                   <span className="text-yellow-highlight">«ADELGAZA SIN SALIR DE CASA»</span>{" "}
                   Y ESTÁN TOTALMENTE FELICES Y MUY AGRADECIDOS CON LOS{" "}
@@ -225,7 +225,7 @@ const Index = () => {
 
           {/* Moved schedule text to bottom as horizontal line */}
           <div className="text-center">
-            <h3 className="font-bold-caps text-2xl lg:text-3xl text-white leading-tight">
+            <h3 className="font-bold-caps text-xl lg:text-2xl text-white leading-tight">
               TENDRÁS <span className="text-yellow-highlight">CLASES DE LUNES A VIERNES</span>{" "}
               POR TODO EL AÑO Y EL <span className="text-yellow-highlight">HORARIO LO PONES TÚ</span>
             </h3>
