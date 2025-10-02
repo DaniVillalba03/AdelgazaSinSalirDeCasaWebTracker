@@ -190,19 +190,13 @@ const Index = () => {
 
           {/* Two Column Layout */}
           <div className="grid lg:grid-cols-2 gap-16 items-start mb-16">
-            {/* Left Column - Testimonials + Schedule Text Below */}
+            {/* Left Column - Testimonials only */}
             <div className="text-center">
               <img
                 src="/assets/images/testimonials/collage.jpg"
                 alt="COLLAGE DE TESTIMONIOS - Antes y Después"
-                className="w-full h-auto max-w-lg mx-auto object-contain rounded-lg shadow-lg mb-8"
+                className="w-full h-auto max-w-lg mx-auto object-contain rounded-lg shadow-lg"
               />
-              
-              {/* Schedule text below image */}
-              <h3 className="font-bold-caps text-2xl lg:text-3xl text-white leading-tight">
-                TENDRÁS <span className="text-yellow-highlight">CLASES DE LUNES A VIERNES</span>{" "}
-                POR TODO EL AÑO Y EL <span className="text-yellow-highlight">HORARIO LO PONES TÚ</span>
-              </h3>
             </div>
 
             {/* Right Column - Community Text + Image */}
@@ -229,14 +223,11 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Horizontal text lines at bottom */}
+          {/* Moved schedule text to bottom as horizontal line */}
           <div className="text-center">
-            <h3 className="font-bold-caps text-2xl lg:text-3xl text-white leading-tight mb-0">
-              CADA DÍA SON MÁS PERSONAS QUE SE UNEN A NUESTRA COMUNIDAD{" "}
-              <span className="text-yellow-highlight">«ADELGAZA SIN SALIR DE CASA»</span>{" "}
-              Y ESTÁN TOTALMENTE FELICES Y MUY AGRADECIDOS CON LOS{" "}
-              <span className="text-yellow-highlight">RESULTADOS OBTENIDOS</span>{" "}
-              CON NUESTRA METODOLOGÍA.
+            <h3 className="font-bold-caps text-2xl lg:text-3xl text-white leading-tight">
+              TENDRÁS <span className="text-yellow-highlight">CLASES DE LUNES A VIERNES</span>{" "}
+              POR TODO EL AÑO Y EL <span className="text-yellow-highlight">HORARIO LO PONES TÚ</span>
             </h3>
           </div>
         </div>
