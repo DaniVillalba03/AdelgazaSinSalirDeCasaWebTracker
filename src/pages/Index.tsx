@@ -182,9 +182,10 @@ const Index = () => {
       {/* Recommendation and Content */}
       <section className="bg-black py-12 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-white/20 p-4 rounded-lg mb-8 text-center">
-            <h4 className="text-lg font-bold text-white">
-              📋 Recomendación: Mirar esta página completa para saber toda la información🤗
+          <div className="text-center mb-8">
+            <h4 className="text-lg font-bold">
+              <span className="text-yellow-highlight">Recomendación:</span>{" "}
+              <span className="text-white">Mirar esta página completa para saber toda la información 🤗</span>
             </h4>
           </div>
 
