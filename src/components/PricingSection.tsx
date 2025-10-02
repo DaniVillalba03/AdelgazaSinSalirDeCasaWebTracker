@@ -99,43 +99,6 @@ export const PricingSection = ({ ofertaEspecialActivada = false }: PricingSectio
           </h2>
         </div>
       </div>
-
-      {/* White Price Section */}
-      <div className="bg-white py-12">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Price Display */}
-          <div className="mb-8">
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <span className="text-4xl font-bold text-gray-400 line-through">$300</span>
-              <span className="text-6xl font-bold text-green-500">$49.99</span>
-            </div>
-            <p className="text-secondary text-lg">
-              (Lo tendrás convertido a tu moneda local)
-            </p>
-          </div>
-
-          {/* Countdown Timer */}
-          <div className="mb-8">
-            <p className="text-secondary font-bold text-lg mb-4">
-              LA OFERTA TERMINARÁ EN...
-            </p>
-            <CountdownTimer />
-          </div>
-          
-          {/* CTA Button */}
-          <DanceFitButton 
-            variant="accent" 
-            size="xl" 
-            className="mb-8"
-            onClick={handleInscribirse}
-          >
-            INSCRÍBETE AL PROGRAMA AQUÍ
-          </DanceFitButton>
-
-          {/* Payment Logos */}
-          <PaymentLogos />
-        </div>
-      </div>
     </section>
   );
 };
