@@ -266,7 +266,7 @@ const Index = () => {
       </section>
 
       {/* Instructors Section */}
-      <section className="bg-gradient-to-br from-pink-100 to-purple-100 py-12 px-4">
+      <section className="bg-gradient-to-br from-purple-600 via-purple-700 to-blue-600 py-12 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left Column - Image */}
@@ -280,16 +280,16 @@ const Index = () => {
 
             {/* Right Column - Text Content with Expandable Sections */}
             <div className="text-center lg:text-left">
-              <h3 className="font-bold-caps text-2xl text-secondary mb-6 text-yellow-highlight">
+              <h3 className="font-bold-caps text-2xl text-yellow-400 mb-6">
                 ¿QUIENES SON LOS PROFESORES Y POR QUÉ PUEDEN AYUDARTE?
               </h3>
 
-              <p className="text-lg text-secondary leading-relaxed mb-8">
-                Desarrollado por <strong>NATALIA ALARCÓN Y CRISTIAN ESPINOSA</strong> artistas, bailarines y entrenadores profesionales 
+              <p className="text-lg text-white leading-relaxed mb-8">
+                Desarrollado por <strong className="text-yellow-300">NATALIA ALARCÓN Y CRISTIAN ESPINOSA</strong> artistas, bailarines y entrenadores profesionales 
                 amantes de la actividad física, con más de 15 años de experiencia y un gran recorrido internacional.
               </p>
 
-              <p className="text-lg text-secondary leading-relaxed mb-8">
+              <p className="text-lg text-white leading-relaxed mb-8">
                 Te dan la garantía de que al hacer parte de esta bella comunidad, tendrás una metodología comprobada 
                 y altamente efectiva que te ayudará a lograr tus objetivos físicos, adquirir hábitos más saludables y mejorar tu calidad de vida.
               </p>
@@ -297,7 +297,7 @@ const Index = () => {
               {/* Expandable Section 1 - Benefits */}
               <div className="mb-6">
                 <div 
-                  className="bg-purple-600 text-white p-4 rounded-lg cursor-pointer hover:bg-purple-700 transition-colors"
+                  className="bg-yellow-500 text-purple-900 p-4 rounded-lg cursor-pointer hover:bg-yellow-400 transition-colors shadow-lg"
                   onClick={() => setExpandedBenefits(!expandedBenefits)}
                 >
                   <h4 className="font-bold text-lg flex items-center justify-between">
@@ -308,7 +308,7 @@ const Index = () => {
                   </h4>
                 </div>
                 {expandedBenefits && (
-                  <div className="bg-purple-500 text-white p-4 rounded-b-lg">
+                  <div className="bg-yellow-400 text-purple-900 p-4 rounded-b-lg shadow-lg">
                     <div className="grid md:grid-cols-2 gap-4">
                       {[
                         "✅ Tonificar y fortalecer tu cuerpo",
@@ -321,7 +321,7 @@ const Index = () => {
                         "✅ Disminuir el estrés y aumentar tu autoestima"
                       ].map((benefit, index) => (
                         <div key={index} className="text-left">
-                          <span className="text-white">{benefit}</span>
+                          <span className="text-purple-900 font-medium">{benefit}</span>
                         </div>
                       ))}
                     </div>
@@ -332,7 +332,7 @@ const Index = () => {
               {/* Expandable Section 2 - Method */}
               <div className="mb-6">
                 <div 
-                  className="bg-purple-600 text-white p-4 rounded-lg cursor-pointer hover:bg-purple-700 transition-colors"
+                  className="bg-yellow-500 text-purple-900 p-4 rounded-lg cursor-pointer hover:bg-yellow-400 transition-colors shadow-lg"
                   onClick={() => setExpandedMethod(!expandedMethod)}
                 >
                   <h4 className="font-bold text-lg flex items-center justify-between">
@@ -343,12 +343,12 @@ const Index = () => {
                   </h4>
                 </div>
                 {expandedMethod && (
-                  <div className="bg-purple-500 text-white p-4 rounded-b-lg">
-                    <p className="text-white leading-relaxed">
-                      Nuestro método de entrenamiento es de tan solo <strong className="text-yellow-400">45 minutos al día</strong>, 
-                      las rutinas de ejercicio las haremos <strong className="text-yellow-400">juntos de manera virtual</strong>, 
-                      trabajaremos <strong className="text-yellow-400">5 días por semana (DE LUNES A VIERNES)</strong> y tendrás 
-                      acompañamiento constante de nuestra parte, <strong className="text-yellow-400">podrás hacernos preguntas cuando quieras</strong>.
+                  <div className="bg-yellow-400 text-purple-900 p-4 rounded-b-lg shadow-lg">
+                    <p className="text-purple-900 leading-relaxed">
+                      Nuestro método de entrenamiento es de tan solo <strong className="text-purple-700">45 minutos al día</strong>, 
+                      las rutinas de ejercicio las haremos <strong className="text-purple-700">juntos de manera virtual</strong>, 
+                      trabajaremos <strong className="text-purple-700">5 días por semana (DE LUNES A VIERNES)</strong> y tendrás 
+                      acompañamiento constante de nuestra parte, <strong className="text-purple-700">podrás hacernos preguntas cuando quieras</strong>.
                     </p>
                   </div>
                 )}
