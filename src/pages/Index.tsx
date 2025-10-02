@@ -297,19 +297,19 @@ const Index = () => {
               {/* Expandable Section 1 - Benefits */}
               <div className="mb-6">
                 <div 
-                  className="bg-yellow-500 text-purple-900 p-4 rounded-lg cursor-pointer hover:bg-yellow-400 transition-colors shadow-lg"
+                  className="bg-purple-800 text-white p-4 rounded-lg cursor-pointer hover:bg-purple-700 transition-colors border-2 border-purple-300"
                   onClick={() => setExpandedBenefits(!expandedBenefits)}
                 >
                   <h4 className="font-bold text-lg flex items-center justify-between">
                     ¿QUÉ MÁS VAS A LOGRAR?
                     <span className="text-2xl transform transition-transform duration-200" style={{
                       transform: expandedBenefits ? 'rotate(45deg)' : 'rotate(0deg)'
-                    }}>+</span>
+                    }}>⊕</span>
                   </h4>
                 </div>
                 {expandedBenefits && (
-                  <div className="bg-yellow-400 text-purple-900 p-4 rounded-b-lg shadow-lg">
-                    <div className="grid md:grid-cols-2 gap-4">
+                  <div className="bg-purple-700 text-white p-4 rounded-b-lg border-2 border-t-0 border-purple-300">
+                    <div className="grid md:grid-cols-2 gap-3">
                       {[
                         "✅ Tonificar y fortalecer tu cuerpo",
                         "✅ Prevenir y disminuir el sobrepeso", 
@@ -318,10 +318,11 @@ const Index = () => {
                         "✅ Mejorar tu condición física",
                         "✅ Prevenir enfermedades gracias a la actividad física",
                         "✅ Ahorrar tiempo, con una metodología de solo 45 minutos al día",
-                        "✅ Disminuir el estrés y aumentar tu autoestima"
+                        "✅ Disminuir el estrés y aumentar tu autoestima",
+                        "✅ Ahorrar dinero en membresías y mensualidades en gimnasios"
                       ].map((benefit, index) => (
                         <div key={index} className="text-left">
-                          <span className="text-purple-900 font-medium">{benefit}</span>
+                          <span className="text-white text-sm">{benefit}</span>
                         </div>
                       ))}
                     </div>
@@ -332,23 +333,23 @@ const Index = () => {
               {/* Expandable Section 2 - Method */}
               <div className="mb-6">
                 <div 
-                  className="bg-yellow-500 text-purple-900 p-4 rounded-lg cursor-pointer hover:bg-yellow-400 transition-colors shadow-lg"
+                  className="bg-purple-800 text-white p-4 rounded-lg cursor-pointer hover:bg-purple-700 transition-colors border-2 border-purple-300"
                   onClick={() => setExpandedMethod(!expandedMethod)}
                 >
                   <h4 className="font-bold text-lg flex items-center justify-between">
                     ¿CÓMO LO VAS A LOGRAR?
                     <span className="text-2xl transform transition-transform duration-200" style={{
                       transform: expandedMethod ? 'rotate(45deg)' : 'rotate(0deg)'
-                    }}>+</span>
+                    }}>⊕</span>
                   </h4>
                 </div>
                 {expandedMethod && (
-                  <div className="bg-yellow-400 text-purple-900 p-4 rounded-b-lg shadow-lg">
-                    <p className="text-purple-900 leading-relaxed">
-                      Nuestro método de entrenamiento es de tan solo <strong className="text-purple-700">45 minutos al día</strong>, 
-                      las rutinas de ejercicio las haremos <strong className="text-purple-700">juntos de manera virtual</strong>, 
-                      trabajaremos <strong className="text-purple-700">5 días por semana (DE LUNES A VIERNES)</strong> y tendrás 
-                      acompañamiento constante de nuestra parte, <strong className="text-purple-700">podrás hacernos preguntas cuando quieras</strong>.
+                  <div className="bg-purple-700 text-white p-4 rounded-b-lg border-2 border-t-0 border-purple-300">
+                    <p className="text-white leading-relaxed">
+                      Nuestro método de entrenamiento es de tan solo <strong className="text-yellow-300">45 minutos al día</strong>, 
+                      las rutinas de ejercicio las haremos <strong className="text-yellow-300">juntos de manera virtual</strong>, 
+                      trabajaremos <strong className="text-yellow-300">5 días por semana (DE LUNES A VIERNES)</strong> y tendrás 
+                      acompañamiento constante de nuestra parte, <strong className="text-yellow-300">podrás hacernos preguntas cuando quieras</strong>.
                     </p>
                   </div>
                 )}
