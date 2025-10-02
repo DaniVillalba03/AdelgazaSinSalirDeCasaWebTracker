@@ -266,13 +266,13 @@ const Index = () => {
       </section>
 
       {/* Instructors Section */}
-      <section className="bg-white py-12 px-4">
+      <section className="bg-gradient-to-br from-pink-100 to-purple-100 py-12 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left Column - Image */}
             <div className="text-center">
               <img
-                src="/assets/images/program/PROFES-2.jpg"
+                src="/assets/images/hero/PROFES-2.jpg"
                 alt="PROFESORES - Natalia Alarcón y Cristian Espinosa"
                 className="w-full h-auto max-w-md mx-auto object-contain rounded-lg shadow-lg"
               />
