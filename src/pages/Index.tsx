@@ -189,18 +189,16 @@ const Index = () => {
           </div>
 
           {/* Two Column Layout */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
-            {/* Left Column - Testimonials */}
+          <div className="grid lg:grid-cols-2 gap-16 items-start mb-16">
+            {/* Left Column - Testimonials + Text Below */}
             <div className="text-center">
               <img
                 src="/assets/images/testimonials/collage.jpg"
                 alt="COLLAGE DE TESTIMONIOS - Antes y Después"
-                className="w-full h-auto max-w-lg mx-auto object-contain rounded-lg shadow-lg"
+                className="w-full h-auto max-w-lg mx-auto object-contain rounded-lg shadow-lg mb-8"
               />
-            </div>
-
-            {/* Right Column - Text */}
-            <div className="text-center lg:text-left flex flex-col justify-center">
+              
+              {/* Text below image */}
               <h3 className="font-bold-caps text-2xl lg:text-3xl text-white leading-tight">
                 CADA DÍA SON MÁS PERSONAS QUE SE UNEN A NUESTRA COMUNIDAD{" "}
                 <span className="text-yellow-highlight">«ADELGAZA SIN SALIR DE CASA»</span>{" "}
@@ -209,25 +207,25 @@ const Index = () => {
                 CON NUESTRA METODOLOGÍA.
               </h3>
             </div>
-          </div>
 
-          {/* Second Row - Course Formats */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left Column - Text */}
-            <div className="text-center lg:text-left flex flex-col justify-center lg:order-1">
-              <h3 className="font-bold-caps text-2xl lg:text-3xl text-white leading-tight">
-                TENDRÁS <span className="text-yellow-highlight">CLASES DE LUNES A VIERNES</span>{" "}
-                POR TODO EL AÑO Y EL <span className="text-yellow-highlight">HORARIO LO PONES TÚ</span>
-              </h3>
-            </div>
+            {/* Right Column - Text + Image */}
+            <div className="flex flex-col">
+              {/* Text above image - positioned higher */}
+              <div className="text-center lg:text-left mb-8">
+                <h3 className="font-bold-caps text-2xl lg:text-3xl text-white leading-tight">
+                  TENDRÁS <span className="text-yellow-highlight">CLASES DE LUNES A VIERNES</span>{" "}
+                  POR TODO EL AÑO Y EL <span className="text-yellow-highlight">HORARIO LO PONES TÚ</span>
+                </h3>
+              </div>
 
-            {/* Right Column - Course Formats */}
-            <div className="text-center lg:order-2">
-              <img
-                src="/assets/images/program/cursovariosformatos.png"
-                alt="CURSO EN VARIOS FORMATOS - Desktop, Mobile, Tablet"
-                className="w-full h-auto max-w-lg mx-auto object-contain rounded-lg shadow-lg"
-              />
+              {/* Image below text */}
+              <div className="text-center">
+                <img
+                  src="/assets/images/program/cursovariosformatos.png"
+                  alt="CURSO EN VARIOS FORMATOS - Desktop, Mobile, Tablet"
+                  className="w-full h-auto max-w-lg mx-auto object-contain rounded-lg shadow-lg"
+                />
+              </div>
             </div>
           </div>
         </div>
