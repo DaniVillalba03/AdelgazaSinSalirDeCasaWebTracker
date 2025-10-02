@@ -181,47 +181,52 @@ const Index = () => {
 
       {/* Recommendation and Content */}
       <section className="bg-black py-12 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-white/20 p-4 rounded-lg mb-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="bg-white/20 p-4 rounded-lg mb-8 text-center">
             <h4 className="text-lg font-bold text-white">
               📋 Recomendación: Mirar esta página completa para saber toda la información🤗
             </h4>
           </div>
 
-          {/* Testimonials Collage */}
-          <div className="mb-12">
-            <img
-              src="/assets/images/testimonials/collage.jpg"
-              alt="COLLAGE DE TESTIMONIOS - Antes y Después"
-              className="w-full h-auto object-contain rounded-lg shadow-lg mb-4 max-h-96"
-            />
-          </div>
+          {/* Two Column Layout */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Testimonials */}
+            <div className="text-center">
+              <img
+                src="/assets/images/testimonials/collage.jpg"
+                alt="COLLAGE DE TESTIMONIOS - Antes y Después"
+                className="w-full h-auto object-contain rounded-lg shadow-lg mb-6"
+              />
+              
+              <h3 className="font-bold-caps text-xl text-white mb-0">
+                CADA DÍA SON MÁS PERSONAS QUE SE UNEN A NUESTRA COMUNIDAD{" "}
+                <span className="text-yellow-highlight">«ADELGAZA SIN SALIR DE CASA»</span>{" "}
+                Y ESTÁN TOTALMENTE FELICES Y MUY AGRADECIDOS CON LOS{" "}
+                <span className="text-yellow-highlight">RESULTADOS OBTENIDOS</span>{" "}
+                CON NUESTRA METODOLOGÍA.
+              </h3>
+            </div>
 
-          <h3 className="font-bold-caps text-2xl text-white mb-8">
-            CADA DÍA SON MÁS PERSONAS QUE SE UNEN A NUESTRA COMUNIDAD{" "}
-            <span className="text-yellow-highlight">«ADELGAZA SIN SALIR DE CASA»</span>{" "}
-            Y ESTÁN TOTALMENTE FELICES Y MUY AGRADECIDOS CON LOS RESULTADOS OBTENIDOS CON NUESTRA METODOLOGÍA.
-          </h3>
+            {/* Right Column - Course Formats */}
+            <div className="text-center">
+              <img
+                src="/assets/images/program/cursovariosformatos.png"
+                alt="CURSO EN VARIOS FORMATOS - Desktop, Mobile, Tablet"
+                className="w-full h-auto object-contain rounded-lg shadow-lg mb-6"
+              />
+              
+              <h3 className="font-bold-caps text-xl text-white mb-0">
+                TENDRÁS <span className="text-yellow-highlight">CLASES DE LUNES A VIERNES</span>{" "}
+                POR TODO EL AÑO Y EL <span className="text-yellow-highlight">HORARIO LO PONES TÚ</span>
+              </h3>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Course Formats */}
+      {/* Exercise Categories */}
       <section className="bg-black py-12 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-12">
-            <img
-              src="/assets/images/program/cursovariosformatos.png"
-              alt="CURSO EN VARIOS FORMATOS - Desktop, Mobile, Tablet"
-              className="w-full h-auto object-contain rounded-lg shadow-lg"
-            />
-          </div>
-
-          <h3 className="font-bold-caps text-2xl text-secondary-foreground mb-12">
-            TENDRÁS <span className="text-yellow-highlight">CLASES DE LUNES A VIERNES</span>{" "}
-            POR TODO EL AÑO Y EL <span className="text-yellow-highlight">HORARIO LO PONES TÚ</span>
-          </h3>
-
-          {/* Exercise Categories */}
+        <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="text-center">
               <img
