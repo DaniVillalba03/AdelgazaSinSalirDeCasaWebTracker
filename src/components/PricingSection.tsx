@@ -42,34 +42,36 @@ export const PricingSection = ({ ofertaEspecialActivada = false }: PricingSectio
   return (
     <section className="bg-black py-12 px-4">
       <div className="max-w-6xl mx-auto">
-        {/* Header Section */}
-        <div className="text-center mb-12">
-          <h2 className="font-bold-caps text-2xl text-white mb-4">
-            TENDRÁS ACCESO A <span className="text-yellow-highlight">6 NIVELES DE DIFICULTAD</span>
-          </h2>
-          <h3 className="font-bold-caps text-lg text-white mb-6">
-            EL PRECIO NORMAL POR CADA NIVEL ES DE 50 DÓLARES, EL PROGRAMA COMPLETO
-          </h3>
-          <h3 className="font-bold-caps text-xl text-red-500 mb-8">
-            CUESTA 300 DÓLARES
-          </h3>
-        </div>
-
         {/* Two Column Layout */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Limited Spots */}
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          {/* Left Column - Text Content */}
           <div className="text-center lg:text-left">
+            {/* 25 CUPOS */}
             <h1 className="font-bold-caps text-6xl text-yellow-highlight mb-2">
               25<span className="text-white">CUPOS</span>
             </h1>
-            <h2 className="font-bold-caps text-2xl text-white mb-4">
+            <h2 className="font-bold-caps text-2xl text-white mb-8">
               DISPONIBLES HASTA HOY
             </h2>
+            
+            {/* Course Information */}
+            <h3 className="font-bold-caps text-2xl text-white mb-4">
+              TENDRÁS ACCESO A <span className="text-yellow-highlight">6 NIVELES DE DIFICULTAD</span>
+            </h3>
+            <h4 className="font-bold-caps text-lg text-white mb-2">
+              EL PRECIO NORMAL POR CADA NIVEL ES
+            </h4>
+            <h4 className="font-bold-caps text-lg text-white mb-2">
+              DE <span className="text-yellow-highlight">50 DÓLARES</span>, EL PROGRAMA
+            </h4>
+            <h4 className="font-bold-caps text-lg text-white mb-6">
+              COMPLETO CUESTA <span className="text-red-500">300 DÓLARES</span>
+            </h4>
           </div>
 
           {/* Right Column - Course Modules Grid */}
           <div>
-            <div className="grid grid-cols-2 gap-4 mb-8">
+            <div className="grid grid-cols-2 gap-4">
               <ImagePlaceholder 
                 title="NIVEL BÁSICO 1"
                 aspectRatio="video"
@@ -122,112 +124,112 @@ export const PricingSection = ({ ofertaEspecialActivada = false }: PricingSectio
               <span className="text-4xl font-bold text-gray-400 line-through">$300</span>
               <span className="text-6xl font-bold text-green-500">$49.99</span>
             </div>
-          <p className="text-secondary text-lg">
-            (Lo tendrás convertido a tu moneda local)
-          </p>
-        </div>
+            <p className="text-secondary text-lg">
+              (Lo tendrás convertido a tu moneda local)
+            </p>
+          </div>
 
-        {/* Countdown Timer */}
-        <div className="mb-8">
-          <p className="text-secondary font-bold text-lg mb-4">
-            LA OFERTA TERMINARÁ EN...
-          </p>
-          <CountdownTimer />
-        </div>
-        
-        {/* Progress Bar */}
-        <div className="bg-gray-200 rounded-full h-4 mb-2 max-w-md mx-auto">
-          <div className="bg-yellow-highlight h-4 rounded-full" style={{ width: '85%' }}></div>
-        </div>
-        <p className="text-secondary font-bold mb-8">
-          SOLO QUEDAN 7 CUPOS - 85%
-        </p>
-        
-        {/* Bonuses Section */}
-        <div className="bg-accent/10 p-8 rounded-xl mb-8">
-          <h3 className="font-bold-caps text-2xl text-secondary mb-6 flex items-center justify-center gap-2">
-            <Gift className="w-8 h-8 text-yellow-highlight" />
-            INSCRÍBETE AHORA Y RECIBE ESTOS BONOS🎁 ¡TOTALMENTE GRATIS!
-          </h3>
+          {/* Countdown Timer */}
+          <div className="mb-8">
+            <p className="text-secondary font-bold text-lg mb-4">
+              LA OFERTA TERMINARÁ EN...
+            </p>
+            <CountdownTimer />
+          </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-            {bonuses.map((bonus, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+          {/* Progress Bar */}
+          <div className="bg-gray-200 rounded-full h-4 mb-2 max-w-md mx-auto">
+            <div className="bg-yellow-highlight h-4 rounded-full" style={{ width: '85%' }}></div>
+          </div>
+          <p className="text-secondary font-bold mb-8">
+            SOLO QUEDAN 7 CUPOS - 85%
+          </p>
+          
+          {/* Bonuses Section */}
+          <div className="bg-accent/10 p-8 rounded-xl mb-8">
+            <h3 className="font-bold-caps text-2xl text-secondary mb-6 flex items-center justify-center gap-2">
+              <Gift className="w-8 h-8 text-yellow-highlight" />
+              INSCRÍBETE AHORA Y RECIBE ESTOS BONOS🎁 ¡TOTALMENTE GRATIS!
+            </h3>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+              {bonuses.map((bonus, index) => (
+                <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+                  <ImagePlaceholder 
+                    title={bonus.title}
+                    aspectRatio="square"
+                    className="mb-4"
+                  />
+                  <h4 className="font-bold text-secondary mb-2">{bonus.title}</h4>
+                  <p className="text-yellow-highlight font-bold">
+                    PRECIO ESTIMADO {bonus.price}
+                  </p>
+                </div>
+              ))}
+            </div>
+            
+            <h4 className="font-bold-caps text-xl text-secondary mb-4">
+              PRECIO ESTIMADO EN SÓLO BONOS = <span className="text-yellow-highlight">$230 DÓLARES</span>
+            </h4>
+          </div>
+          
+          {/* Exclusive Bonuses */}
+          <div className="bg-primary/10 p-8 rounded-xl mb-8">
+            <h3 className="font-bold-caps text-2xl text-secondary mb-6">
+              😍 Y AÚN HAY MÁS
+            </h3>
+            <h4 className="font-bold-caps text-lg text-secondary mb-6">
+              3 BONOS SUPER EXCLUSIVOS SOLO PARA LAS PRIMERAS 10 PERSONAS QUE SE INSCRIBAN EL DÍA DE HOY
+            </h4>
+            
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="text-center">
                 <ImagePlaceholder 
-                  title={bonus.title}
-                  aspectRatio="square"
+                  title="CERTIFICADO AVALADO POR HOTMART"
+                  aspectRatio="portrait"
                   className="mb-4"
                 />
-                <h4 className="font-bold text-secondary mb-2">{bonus.title}</h4>
-                <p className="text-yellow-highlight font-bold">
-                  PRECIO ESTIMADO {bonus.price}
-                </p>
+                <h5 className="font-bold text-secondary">
+                  CERTIFICADO AL CULMINAR EL PROGRAMA AVALADO POR HOTMART
+                </h5>
               </div>
-            ))}
-          </div>
-          
-          <h4 className="font-bold-caps text-xl text-secondary mb-4">
-            PRECIO ESTIMADO EN SÓLO BONOS = <span className="text-yellow-highlight">$230 DÓLARES</span>
-          </h4>
-        </div>
-        
-        {/* Exclusive Bonuses */}
-        <div className="bg-primary/10 p-8 rounded-xl mb-8">
-          <h3 className="font-bold-caps text-2xl text-secondary mb-6">
-            😍 Y AÚN HAY MÁS
-          </h3>
-          <h4 className="font-bold-caps text-lg text-secondary mb-6">
-            3 BONOS SUPER EXCLUSIVOS SOLO PARA LAS PRIMERAS 10 PERSONAS QUE SE INSCRIBAN EL DÍA DE HOY
-          </h4>
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center">
-              <ImagePlaceholder 
-                title="CERTIFICADO AVALADO POR HOTMART"
-                aspectRatio="portrait"
-                className="mb-4"
-              />
-              <h5 className="font-bold text-secondary">
-                CERTIFICADO AL CULMINAR EL PROGRAMA AVALADO POR HOTMART
-              </h5>
-            </div>
-            
-            <div className="text-center">
-              <ImagePlaceholder 
-                title="WHATSAPP PERSONAL"
-                aspectRatio="portrait"
-                className="mb-4"
-              />
-              <h5 className="font-bold text-secondary">
-                ACCESO A NUESTRO WHATSAPP PERSONAL PARA ASESORIA Y ACOMPAÑAMIENTO PERSONALIZADO
-              </h5>
-            </div>
-            
-            <div className="text-center">
-              <ImagePlaceholder 
-                title="GRUPO EXCLUSIVO FACEBOOK"
-                aspectRatio="portrait"
-                className="mb-4"
-              />
-              <h5 className="font-bold text-secondary">
-                ACCESO A NUESTRO GRUPO EXCLUSIVO DE FACEBOOK EN DONDE TE APOYAMOS Y MOTIVAMOS SIEMPRE
-              </h5>
+              
+              <div className="text-center">
+                <ImagePlaceholder 
+                  title="WHATSAPP PERSONAL"
+                  aspectRatio="portrait"
+                  className="mb-4"
+                />
+                <h5 className="font-bold text-secondary">
+                  ACCESO A NUESTRO WHATSAPP PERSONAL PARA ASESORIA Y ACOMPAÑAMIENTO PERSONALIZADO
+                </h5>
+              </div>
+              
+              <div className="text-center">
+                <ImagePlaceholder 
+                  title="GRUPO EXCLUSIVO FACEBOOK"
+                  aspectRatio="portrait"
+                  className="mb-4"
+                />
+                <h5 className="font-bold text-secondary">
+                  ACCESO A NUESTRO GRUPO EXCLUSIVO DE FACEBOOK EN DONDE TE APOYAMOS Y MOTIVAMOS SIEMPRE
+                </h5>
+              </div>
             </div>
           </div>
-        </div>
-        
-        {/* CTA Button */}
-        <DanceFitButton 
-          variant="accent" 
-          size="xl" 
-          className="mb-8"
-          onClick={handleInscribirse}
-        >
-          INSCRÍBETE AL PROGRAMA AQUÍ
-        </DanceFitButton>
+          
+          {/* CTA Button */}
+          <DanceFitButton 
+            variant="accent" 
+            size="xl" 
+            className="mb-8"
+            onClick={handleInscribirse}
+          >
+            INSCRÍBETE AL PROGRAMA AQUÍ
+          </DanceFitButton>
 
-        {/* Payment Logos */}
-        <PaymentLogos />
+          {/* Payment Logos */}
+          <PaymentLogos />
         </div>
       </div>
     </section>
