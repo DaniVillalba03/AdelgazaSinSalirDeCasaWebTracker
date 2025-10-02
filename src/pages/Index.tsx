@@ -190,7 +190,7 @@ const Index = () => {
 
           {/* Two Column Layout */}
           <div className="grid lg:grid-cols-2 gap-16 items-start mb-16">
-            {/* Left Column - Testimonials + Text Below */}
+            {/* Left Column - Testimonials + Schedule Text Below */}
             <div className="text-center">
               <img
                 src="/assets/images/testimonials/collage.jpg"
@@ -198,23 +198,23 @@ const Index = () => {
                 className="w-full h-auto max-w-lg mx-auto object-contain rounded-lg shadow-lg mb-8"
               />
               
-              {/* Text below image */}
+              {/* Schedule text below image */}
               <h3 className="font-bold-caps text-2xl lg:text-3xl text-white leading-tight">
-                CADA DÍA SON MÁS PERSONAS QUE SE UNEN A NUESTRA COMUNIDAD{" "}
-                <span className="text-yellow-highlight">«ADELGAZA SIN SALIR DE CASA»</span>{" "}
-                Y ESTÁN TOTALMENTE FELICES Y MUY AGRADECIDOS CON LOS{" "}
-                <span className="text-yellow-highlight">RESULTADOS OBTENIDOS</span>{" "}
-                CON NUESTRA METODOLOGÍA.
+                TENDRÁS <span className="text-yellow-highlight">CLASES DE LUNES A VIERNES</span>{" "}
+                POR TODO EL AÑO Y EL <span className="text-yellow-highlight">HORARIO LO PONES TÚ</span>
               </h3>
             </div>
 
-            {/* Right Column - Text + Image */}
+            {/* Right Column - Community Text + Image */}
             <div className="flex flex-col">
-              {/* Text above image - positioned higher */}
+              {/* Community text above image */}
               <div className="text-center lg:text-left mb-8">
                 <h3 className="font-bold-caps text-2xl lg:text-3xl text-white leading-tight">
-                  TENDRÁS <span className="text-yellow-highlight">CLASES DE LUNES A VIERNES</span>{" "}
-                  POR TODO EL AÑO Y EL <span className="text-yellow-highlight">HORARIO LO PONES TÚ</span>
+                  CADA DÍA SON MÁS PERSONAS QUE SE UNEN A NUESTRA COMUNIDAD{" "}
+                  <span className="text-yellow-highlight">«ADELGAZA SIN SALIR DE CASA»</span>{" "}
+                  Y ESTÁN TOTALMENTE FELICES Y MUY AGRADECIDOS CON LOS{" "}
+                  <span className="text-yellow-highlight">RESULTADOS OBTENIDOS</span>{" "}
+                  CON NUESTRA METODOLOGÍA.
                 </h3>
               </div>
 
@@ -227,6 +227,17 @@ const Index = () => {
                 />
               </div>
             </div>
+          </div>
+
+          {/* Single line text below - horizontal layout */}
+          <div className="text-center">
+            <h3 className="font-bold-caps text-2xl lg:text-3xl text-white leading-tight inline-block">
+              CADA DÍA SON MÁS PERSONAS QUE SE UNEN A NUESTRA COMUNIDAD{" "}
+              <span className="text-yellow-highlight">«ADELGAZA SIN SALIR DE CASA»</span>{" "}
+              Y ESTÁN TOTALMENTE FELICES Y MUY AGRADECIDOS CON LOS{" "}
+              <span className="text-yellow-highlight">RESULTADOS OBTENIDOS</span>{" "}
+              CON NUESTRA METODOLOGÍA.
+            </h3>
           </div>
         </div>
       </section>
