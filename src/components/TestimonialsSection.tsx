@@ -16,24 +16,42 @@ export const TestimonialsSection = () => {
           ))}
         </div>
         
-        {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
-          <ImagePlaceholder 
-            title="TESTIMONIO 1 - Resultado de transformación"
-            aspectRatio="square"
-          />
-          <ImagePlaceholder 
-            title="TESTIMONIO 2 - Resultado de transformación"
-            aspectRatio="square"
-          />
-          <ImagePlaceholder 
-            title="TESTIMONIO 3 - Resultado de transformación"
-            aspectRatio="square"
-          />
-          <ImagePlaceholder 
-            title="TESTIMONIO 4 - Resultado de transformación"
-            aspectRatio="square"
-          />
+        {/* Testimonials Carousel */}
+        <div className="relative overflow-hidden mb-12">
+          <div className="flex animate-scroll gap-6" style={{
+            width: 'calc(200% + 24px)'
+          }}>
+            {/* First set of testimonials */}
+            <div className="flex gap-6 min-w-full">
+              <div className="w-1/2">
+                <ImagePlaceholder 
+                  title="TESTIMONIO 1 - Resultado de transformación"
+                  aspectRatio="square"
+                />
+              </div>
+              <div className="w-1/2">
+                <ImagePlaceholder 
+                  title="TESTIMONIO 2 - Resultado de transformación"
+                  aspectRatio="square"
+                />
+              </div>
+            </div>
+            {/* Second set of testimonials */}
+            <div className="flex gap-6 min-w-full">
+              <div className="w-1/2">
+                <ImagePlaceholder 
+                  title="TESTIMONIO 3 - Resultado de transformación"
+                  aspectRatio="square"
+                />
+              </div>
+              <div className="w-1/2">
+                <ImagePlaceholder 
+                  title="TESTIMONIO 4 - Resultado de transformación"
+                  aspectRatio="square"
+                />
+              </div>
+            </div>
+          </div>
         </div>
         
         <h3 className="font-bold-caps text-2xl text-secondary-foreground mb-4">
