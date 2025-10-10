@@ -456,11 +456,22 @@ const Index = () => {
       {/* Testimonials */}
       <TestimonialsSection />
 
-      {/* Guarantee Section */}
-      <GuaranteeSection />
+      {/* FAQ + Guarantee Two-column layout */}
+      <section className="bg-white py-12 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-10 items-start">
+            {/* Left: FAQ Accordion */}
+            <div>
+              <FAQSection />
+            </div>
 
-      {/* FAQ Section */}
-      <FAQSection />
+            {/* Right: Guarantee / Timer / CTA */}
+            <div>
+              <GuaranteeSection />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Final CTA Section */}
       <section className="bg-purple-gradient py-16 px-4">
