@@ -138,3 +138,10 @@
 .animate-scroll {
   animation: scroll 20s linear infinite;
 }
+
+/* Improve rendering for small raster logos */
+.optimize-image {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
