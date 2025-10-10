@@ -428,30 +428,7 @@ const Index = () => {
       {/* Pricing Section */}
       <PricingSection ofertaEspecialActivada={ofertaEspecialActivada} />
 
-      {/* Countdown Timer */}
-      <section className="bg-secondary py-12 px-4">
-        <div className="max-w-4xl mx-auto">
-          <CountdownTimer />
-          
-          <div className="text-center">
-            <h3 className="font-bold-caps text-2xl text-secondary-foreground mb-8">
-              RECIBE EL PROGRAMA COMPLETO + LOS 6 BONOS 🎁 ANTES QUE EL CONTADOR LLEGUE A CERO.
-            </h3>
-            
-            <DanceFitButton 
-              variant="accent" 
-              size="xl" 
-              className="mb-8"
-              onClick={handleInscribirse}
-            >
-              INSCRÍBETE AQUÍ
-            </DanceFitButton>
-            
-            {/* Payment Logos */}
-            <PaymentLogos />
-          </div>
-        </div>
-      </section>
+      {/* Countdown Timer (moved into Guarantee column) */}
 
       {/* Testimonials */}
       <TestimonialsSection />
@@ -468,6 +445,36 @@ const Index = () => {
             {/* Right: Guarantee / Timer / CTA */}
             <div>
               <GuaranteeSection />
+
+              {/* Moved CTA block: Countdown, CTA button, progress and payment logos */}
+              <div className="mt-8 p-6 bg-transparent">
+                <div className="mb-8">
+                  <p className="text-yellow-400 text-xl font-bold mb-4 text-center">LA OFERTA TERMINARÁ EN...</p>
+                  <div className="flex justify-center">
+                    <CountdownTimer />
+                  </div>
+                </div>
+
+                <div className="mb-6 flex justify-center">
+                  <DanceFitButton 
+                    variant="accent" 
+                    size="xl" 
+                    className="mb-4"
+                    onClick={handleInscribirse}
+                  >
+                    INSCRÍBETE AQUÍ
+                  </DanceFitButton>
+                </div>
+
+                <div className="bg-yellow-highlight text-accent-foreground rounded-lg p-4 mb-6 max-w-md mx-auto text-center">
+                  <div className="bg-red-500 rounded-full h-4 mb-2" style={{ width: '85%' }}></div>
+                  <span className="font-bold">SOLO QUEDAN 7 CUPOS - 85%</span>
+                </div>
+
+                <div className="max-w-md mx-auto">
+                  <PaymentLogos />
+                </div>
+              </div>
             </div>
           </div>
         </div>
