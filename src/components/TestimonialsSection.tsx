@@ -48,12 +48,18 @@ export const TestimonialsSection = () => {
           Mira este video para ver lo que opinan ellos👇
         </div>
         
-        {/* Testimonials Video Placeholder */}
+        {/* Testimonials Video */}
         <div className="max-w-2xl mx-auto">
-          <ImagePlaceholder 
-            title="VIDEO TESTIMONIOS - Opiniones de estudiantes"
-            aspectRatio="video"
-          />
+          <div className="relative rounded-xl overflow-hidden shadow-2xl">
+            <video 
+              controls 
+              className="w-full h-auto"
+              poster="/assets/images/testimonials/collage.jpg"
+            >
+              <source src="/assets/videos/testimonials/testimonios_adelgaza.mp4" type="video/mp4" />
+              Tu navegador no soporta el elemento de video.
+            </video>
+          </div>
         </div>
       </div>
     </section>
