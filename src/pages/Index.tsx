@@ -480,28 +480,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section className="bg-purple-gradient py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <CountdownTimer />
-          
-          <DanceFitButton 
-            variant="accent" 
-            size="xl" 
-            className="mb-8"
-            onClick={handleInscribirse}
-          >
-            INSCRÍBETE AQUÍ
-          </DanceFitButton>
-
-          <div className="bg-yellow-highlight text-accent-foreground rounded-lg p-4 mb-8 max-w-md mx-auto">
-            <div className="bg-red-500 rounded-full h-4 mb-2" style={{ width: '85%' }}></div>
-            <span className="font-bold">SOLO QUEDAN 7 CUPOS - 85%</span>
-          </div>
-          
-          <PaymentLogos />
-        </div>
-      </section>
+      
 
       {/* Footer */}
       <footer className="bg-secondary py-8 px-4">
