@@ -30,9 +30,10 @@ export const GuaranteeSection = () => {
           </div>
           
           <div className="max-w-md mx-auto">
-            <ImagePlaceholder 
-              title="LOGO HOTMART - Garantía de satisfacción"
-              aspectRatio="wide"
+            <img 
+              src="/assets/images/hero/7dias.png"
+              alt="7 DÍAS DE GARANTÍA - Hotmart"
+              className="w-full h-auto max-w-sm mx-auto object-contain"
             />
           </div>
         </div>
