@@ -54,7 +54,6 @@ export const TestimonialsSection = () => {
             <video 
               controls 
               className="w-full h-auto"
-              poster="/assets/images/testimonials/collage.jpg"
             >
               <source src="/assets/videos/testimonials/testimonios_adelgaza.mp4" type="video/mp4" />
               Tu navegador no soporta el elemento de video.
