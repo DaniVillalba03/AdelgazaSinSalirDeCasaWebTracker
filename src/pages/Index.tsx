@@ -511,7 +511,7 @@ const Index = () => {
             <img
               src="/assets/images/hero/tiktok-4-min.png"
               alt="Logo Tiktok"
-              className="w-12 h-12 mx-auto mb-4 object-contain optimize-image"
+              className="w-24 h-24 mx-auto mb-4 object-contain optimize-image"
             />
             <p className="text-secondary-foreground mb-6">Síguenos en Tiktok</p>
           </div>
