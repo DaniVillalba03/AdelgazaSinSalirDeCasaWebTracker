@@ -8,6 +8,7 @@ import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { PricingSection } from "@/components/PricingSection";
 import { GuaranteeSection } from "@/components/GuaranteeSection";
 import { Home, Heart, CheckCircle, Facebook, Instagram, X } from "lucide-react";
+import WaveSeparator from "@/components/WaveSeparator";
 import { useState, useEffect } from "react";
 
 const Index = () => {
@@ -138,8 +139,11 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Main Content Section */}
-      <section className="bg-secondary text-secondary-foreground py-12 px-4">
+  {/* Wavy separator (hero -> main content) */}
+  <WaveSeparator topColor="#6b21a8" bottomColor="#000000" flip={true} height={80} />
+
+  {/* Main Content Section */}
+  <section className="bg-secondary text-secondary-foreground py-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-bold-caps text-2xl mb-8 text-shadow">
             <span className="text-yellow-highlight">DESCUBRE</span> COMO PODER{" "}
@@ -169,8 +173,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Success Message */}
-      <section className="bg-purple-gradient py-12 px-4">
+  {/* Wavy separator (main content -> success message) */}
+  <WaveSeparator topColor="#000000" bottomColor="#6b21a8" flip={false} height={80} />
+
+  {/* Success Message */}
+  <section className="bg-purple-gradient py-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="font-bold-caps text-2xl text-white mb-0">
             SI DESEAS LLEGAR A TU <span className="text-yellow-highlight">PESO IDEAL</span>, 
@@ -181,8 +188,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Recommendation and Content */}
-      <section className="bg-black py-12 px-4">
+  {/* Wavy separator (success -> recommendation) */}
+  <WaveSeparator topColor="#6b21a8" bottomColor="#000000" flip={true} height={80} />
+
+  {/* Recommendation and Content */}
+  <section className="bg-black py-12 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8">
             <h4 className="text-lg font-bold">
