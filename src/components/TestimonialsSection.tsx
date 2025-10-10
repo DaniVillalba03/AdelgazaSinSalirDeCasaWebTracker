@@ -67,7 +67,7 @@ export const TestimonialsSection = () => {
         </div>
         
         {/* Testimonials Video */}
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-2xl mx-auto mb-12">
           <div className="relative rounded-xl overflow-hidden shadow-2xl">
             <video 
               controls 
@@ -77,6 +77,20 @@ export const TestimonialsSection = () => {
               Tu navegador no soporta el elemento de video.
             </video>
           </div>
+        </div>
+
+        {/* Comienza Hoy Mismo Block */}
+        <div className="bg-yellow-100 p-6 rounded-lg max-w-2xl mx-auto">
+          <h3 className="font-bold-caps text-xl text-secondary mb-4">
+            ¡COMIENZA HOY MISMO!
+          </h3>
+          <p className="text-secondary text-lg leading-relaxed mb-4">
+            Imagina cómo sería tu vida si dedicaras tan solo <strong>45 MINUTOS</strong> al día para ejercitarte… 
+            No solo vas a prevenir un gran número de enfermedades, sino que además te sentirás con mucha más fuerza y vitalidad.
+          </p>
+          <p className="font-bold-caps text-xl text-secondary">
+            ¿<span className="text-yellow-highlight">Cuánto vale para ti TENER BUENA SALUD?</span>
+          </p>
         </div>
       </div>
     </section>
