@@ -124,16 +124,23 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header Hero Section */}
-      <header className="bg-purple-gradient py-2 px-2">
-        <div className="w-full">
-          {/* Hero Image */}
-          <div>
+    <div className="min-h-screen bg-black">
+      {/* Header Hero Section - Premium */}
+      <header className="relative bg-gradient-to-br from-purple-900 via-purple-700 to-purple-900 py-2 px-2 overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-yellow-400 rounded-full blur-[150px] animate-pulse-slow"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-400 rounded-full blur-[150px] animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
+        </div>
+
+        <div className="w-full relative z-10">
+          {/* Hero Image with Animation */}
+          <div className="animate-fade-up">
             <img 
               src="/assets/images/hero/crashing-portada.png"
-              alt=""
-              className="w-full h-auto aspect-[32/9] object-cover"
+              alt="Adelgaza Sin Salir De Casa - Programa de Transformación"
+              className="w-full h-auto aspect-[32/9] object-cover rounded-lg shadow-2xl 
+                       hover-scale transition-transform duration-500"
             />
           </div>
         </div>
@@ -142,10 +149,17 @@ const Index = () => {
   {/* Wavy separator (hero -> main content) */}
   <WaveSeparator topColor="#6b21a8" bottomColor="#000000" flip={true} height={80} />
 
-  {/* Main Content Section */}
-  <section className="bg-secondary text-secondary-foreground py-12 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-bold-caps text-2xl mb-8 text-shadow">
+  {/* Main Content Section - Redesigned */}
+  <section className="bg-black text-white py-16 md:py-20 px-4 relative overflow-hidden">
+        {/* Background Decoration */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-10 w-64 h-64 bg-purple-600 rounded-full blur-[100px]"></div>
+          <div className="absolute bottom-20 right-10 w-72 h-72 bg-yellow-400 rounded-full blur-[120px]"></div>
+        </div>
+
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          <h2 className="font-bold-caps text-2xl md:text-3xl lg:text-4xl mb-10 leading-tight animate-fade-up px-4"
+              style={{ textShadow: '0 2px 10px rgba(0, 0, 0, 0.8)' }}>
             <span className="text-yellow-highlight">DESCUBRE</span> COMO PODER{" "}
             <span className="text-yellow-highlight">ESTAR EN FORMA</span> Y TENER UNA{" "}
             <span className="text-yellow-highlight">VIDA SALUDABLE</span>,<br />
@@ -153,21 +167,28 @@ const Index = () => {
             <span className="text-yellow-highlight">RESULTADOS</span> A PARTIR DE LA TERCER SEMANA.
           </h2>
 
-          <div className="text-yellow-highlight text-lg font-bold mb-8">
-            👇 Mira este video de 1 MINUTO para saber como
+          <div className="text-yellow-highlight text-base md:text-lg font-bold mb-8 animate-fade-up-delay-1 
+                        flex items-center justify-center gap-2">
+            <span className="text-2xl animate-bounce">👇</span>
+            <span>Mira este video de 1 MINUTO para saber como</span>
+            <span className="text-2xl animate-bounce">👇</span>
           </div>
 
-          {/* Video Section */}
-          <div className="max-w-4xl mx-auto mb-12">
-            <div className="relative bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg overflow-hidden shadow-xl">
-              <video 
-                className="w-full h-auto aspect-video object-cover"
-                controls
-                preload="metadata"
-              >
-                <source src="/assets/videos/demo/video-demo.mp4" type="video/mp4" />
-                Tu navegador no soporta el elemento video.
-              </video>
+          {/* Video Section - Premium Frame */}
+          <div className="max-w-4xl mx-auto mb-12 animate-fade-up-delay-2">
+            <div className="relative p-1 bg-gradient-to-r from-purple-600 via-yellow-400 to-purple-600 
+                          rounded-2xl shadow-2xl hover-lift transition-all duration-500">
+              <div className="relative bg-black rounded-xl overflow-hidden">
+                <video 
+                  className="w-full h-auto aspect-video object-cover"
+                  controls
+                  preload="metadata"
+                  poster="/assets/images/hero/video-thumbnail.jpg"
+                >
+                  <source src="/assets/videos/demo/video-demo.mp4" type="video/mp4" />
+                  Tu navegador no soporta el elemento video.
+                </video>
+              </div>
             </div>
           </div>
         </div>
@@ -176,14 +197,24 @@ const Index = () => {
   {/* Wavy separator (main content -> success message) */}
   <WaveSeparator topColor="#000000" bottomColor="#6b21a8" flip={false} height={80} />
 
-  {/* Success Message */}
-  <section className="bg-purple-gradient py-12 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="font-bold-caps text-2xl text-white mb-0">
+  {/* Success Message - Enhanced */}
+  <section className="bg-gradient-to-br from-purple-900 via-purple-700 to-purple-900 py-16 md:py-20 px-4 relative overflow-hidden">
+        {/* Animated Sparkles */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-10 left-1/4 w-64 h-64 bg-yellow-400 rounded-full blur-[100px] animate-pulse-slow"></div>
+          <div className="absolute bottom-10 right-1/3 w-80 h-80 bg-purple-400 rounded-full blur-[120px] animate-pulse-slow" style={{ animationDelay: '1.5s' }}></div>
+        </div>
+
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          <h3 className="font-bold-caps text-2xl md:text-3xl lg:text-4xl text-white mb-0 leading-tight animate-fade-up px-4"
+              style={{ textShadow: '0 2px 15px rgba(0, 0, 0, 0.9)' }}>
             SI DESEAS LLEGAR A TU <span className="text-yellow-highlight">PESO IDEAL</span>, 
             AUMENTAR <span className="text-yellow-highlight">MASA MUSCULAR</span>, 
             TENER UN <span className="text-yellow-highlight">ABDOMEN PLANO</span> Y 
-            SENTIRTE MUCHO MEJOR CONTIGO MISMO/A, ENTONCES ESTE PROGRAMA DEFINITIVAMENTE ES PARA TI.
+            SENTIRTE MUCHO MEJOR CONTIGO MISMO/A,{" "}
+            <span className="block mt-4 text-yellow-highlight text-3xl md:text-4xl lg:text-5xl animate-pulse-slow">
+              ENTONCES ESTE PROGRAMA DEFINITIVAMENTE ES PARA TI.
+            </span>
           </h3>
         </div>
       </section>
@@ -191,32 +222,39 @@ const Index = () => {
   {/* Wavy separator (success -> recommendation) */}
   <WaveSeparator topColor="#6b21a8" bottomColor="#000000" flip={true} height={80} />
 
-  {/* Recommendation and Content */}
-  <section className="bg-black py-12 px-4">
+  {/* Recommendation and Content - Premium Layout */}
+  <section className="bg-black py-16 md:py-20 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8">
-            <h4 className="text-lg font-bold">
-              <span className="text-yellow-highlight">Recomendación:</span>{" "}
-              <span className="text-white">Mirar esta página completa para saber toda la información 🤗</span>
-            </h4>
+          <div className="text-center mb-12 animate-fade-up">
+            <div className="glassmorphic-dark p-4 md:p-6 rounded-2xl border border-yellow-500/30 inline-block">
+              <h4 className="text-base md:text-lg font-bold">
+                <span className="text-yellow-highlight text-xl md:text-2xl">💡 Recomendación:</span>{" "}
+                <span className="text-white">Mirar esta página completa para saber toda la información 🤗</span>
+              </h4>
+            </div>
           </div>
 
-          {/* Two Column Layout */}
-          <div className="grid lg:grid-cols-2 gap-16 items-start mb-16">
-            {/* Left Column - Testimonials only */}
-            <div className="text-center">
-              <img
-                src="/assets/images/testimonials/collage.jpg"
-                alt="COLLAGE DE TESTIMONIOS - Antes y Después"
-                className="w-full h-auto max-w-lg mx-auto object-contain rounded-lg shadow-lg"
-              />
+          {/* Two Column Layout - Premium Grid */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-16">
+            {/* Left Column - Testimonials with Animation */}
+            <div className="text-center animate-fade-up-delay-1">
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-yellow-400 rounded-2xl 
+                              blur-xl opacity-0 group-hover:opacity-40 transition-opacity duration-500"></div>
+                <img
+                  src="/assets/images/testimonials/collage.jpg"
+                  alt="COLLAGE DE TESTIMONIOS - Antes y Después"
+                  className="relative w-full h-auto max-w-lg mx-auto object-contain rounded-2xl shadow-2xl 
+                           hover-scale transition-transform duration-500 border-2 border-purple-500/30"
+                />
+              </div>
             </div>
 
             {/* Right Column - Community Text + Image */}
-            <div className="flex flex-col">
+            <div className="flex flex-col animate-fade-up-delay-2">
               {/* Community text above image */}
               <div className="text-center flex items-center justify-center mb-8">
-                <h3 className="font-bold-caps text-lg lg:text-xl text-white leading-tight">
+                <h3 className="font-bold-caps text-lg md:text-xl lg:text-2xl text-white leading-tight">
                   CADA DÍA SON MÁS PERSONAS QUE SE UNEN A NUESTRA COMUNIDAD{" "}
                   <span className="text-yellow-highlight">"ADELGAZA SIN SALIR DE CASA"</span>{" "}
                   Y ESTÁN TOTALMENTE FELICES Y MUY AGRADECIDOS CON LOS{" "}
@@ -225,23 +263,37 @@ const Index = () => {
                 </h3>
               </div>
 
-              {/* Image below text */}
+              {/* Image below text with Hover Effect */}
               <div className="text-center">
-                <img
-                  src="/assets/images/program/cursovariosformatos.png"
-                  alt="CURSO EN VARIOS FORMATOS - Desktop, Mobile, Tablet"
-                  className="w-full h-auto max-w-lg mx-auto object-contain rounded-lg shadow-lg"
-                />
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-purple-600 rounded-2xl 
+                                blur-xl opacity-0 group-hover:opacity-40 transition-opacity duration-500"></div>
+                  <img
+                    src="/assets/images/program/cursovariosformatos.png"
+                    alt="CURSO EN VARIOS FORMATOS - Desktop, Mobile, Tablet"
+                    className="relative w-full h-auto max-w-lg mx-auto object-contain rounded-2xl shadow-2xl 
+                             hover-scale transition-transform duration-500 border-2 border-yellow-500/30"
+                  />
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Moved schedule text to bottom as horizontal line */}
-          <div className="text-center">
-            <h3 className="font-bold-caps text-lg lg:text-xl text-white leading-tight">
-              TENDRÁS <span className="text-yellow-highlight">CLASES DE LUNES A VIERNES</span>{" "}
-              POR TODO EL AÑO Y EL <span className="text-yellow-highlight">HORARIO LO PONES TÚ</span>
-            </h3>
+          {/* Schedule Banner - Premium Design */}
+          <div className="text-center animate-fade-up-delay-3">
+            <div className="glassmorphic-dark p-6 md:p-8 rounded-2xl border-2 border-purple-500/30 
+                          max-w-4xl mx-auto hover-lift">
+              <h3 className="font-bold-caps text-xl md:text-2xl lg:text-3xl text-white leading-tight">
+                TENDRÁS{" "}
+                <span className="text-yellow-highlight" style={{ textShadow: '0 0 10px rgba(255, 230, 0, 0.5)' }}>
+                  CLASES DE LUNES A VIERNES
+                </span>{" "}
+                POR TODO EL AÑO Y EL{" "}
+                <span className="text-yellow-highlight" style={{ textShadow: '0 0 10px rgba(255, 230, 0, 0.5)' }}>
+                  HORARIO LO PONES TÚ
+                </span>
+              </h3>
+            </div>
           </div>
         </div>
       </section>
