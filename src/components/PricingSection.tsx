@@ -52,7 +52,7 @@ export const PricingSection = ({ ofertaEspecialActivada = false }: PricingSectio
     <section className="bg-black py-16 md:py-24 px-4 md:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Two Column Layout - Premium Design */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column - 25 CUPOS Text with Glow Effect */}
           <div className="text-center lg:text-left animate-fade-up">
             <div className="relative inline-block">
@@ -87,59 +87,19 @@ export const PricingSection = ({ ofertaEspecialActivada = false }: PricingSectio
             <div className="w-32 h-1 bg-gradient-to-r from-purple-600 via-yellow-400 to-purple-600 mx-auto lg:mx-0 rounded-full animate-pulse-slow"></div>
           </div>
 
-          {/* Right Column - Course Modules Grid with Interactive Hover */}
+          {/* Right Column - Course Modules Single Image */}
           <div className="animate-fade-up-delay-1">
-            <div className="grid grid-cols-2 gap-3 md:gap-4 lg:gap-5">
-              {courseModules.map((module, index) => (
-                <div 
-                  key={index}
-                  className={`hover-lift ${module.delay} opacity-0 animate-fade-up rounded-xl overflow-hidden shadow-lg
-                             transition-all duration-300 cursor-pointer group relative
-                             ring-2 ring-transparent hover:ring-purple-500/50`}
-                  role="button"
-                  tabIndex={0}
-                  aria-label={`Módulo ${module.title}`}
-                >
-                  <ImagePlaceholder 
-                    title={module.title}
-                    aspectRatio="video"
-                    className="rounded-lg transform transition-transform duration-300 group-hover:scale-105"
-                  />
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-purple-900/80 via-transparent to-transparent 
-                                opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg
-                                flex items-end justify-center pb-3">
-                    <span className="text-white text-xs font-bold-caps tracking-wider">VER CONTENIDO</span>
-                  </div>
-                </div>
-              ))}
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-yellow-400 rounded-2xl 
+                            blur-xl opacity-0 group-hover:opacity-40 transition-opacity duration-500"></div>
+              <img
+                src="/assets/images/program/MODULOS-min.png"
+                alt="6 Niveles de Dificultad - Programa Completo"
+                className="relative w-full h-auto max-w-2xl mx-auto object-contain rounded-2xl shadow-2xl 
+                         hover-scale transition-transform duration-500 border-2 border-purple-500/30"
+              />
             </div>
           </div>
-        </div>
-
-        {/* Bottom Section - Call to Action */}
-        <div className="text-center animate-fade-up-delay-2">
-          <h2 className="font-bold-caps text-3xl md:text-4xl lg:text-5xl text-white mb-4 md:mb-6 leading-tight px-4">
-            LLEVA{" "}
-            <span className="text-yellow-highlight relative inline-block">
-              TODOS
-              <span className="absolute -bottom-1 left-0 w-full h-1 bg-yellow-400 rounded-full"></span>
-            </span>
-            {" "}LOS NIVELES
-            <br className="md:hidden" />
-            <span className="md:inline"> POR EL </span>
-            <span className="text-yellow-highlight relative inline-block">
-              PRECIO DE UNO
-              <span className="absolute -bottom-1 left-0 w-full h-1 bg-yellow-400 rounded-full"></span>
-            </span>
-          </h2>
-          
-          {/* Value Proposition */}
-          <p className="text-white/80 text-base md:text-lg max-w-2xl mx-auto mb-8 px-4">
-            Acceso completo a todos los niveles de entrenamiento, desde básico hasta avanzado.
-            <br className="hidden md:block" />
-            <span className="text-yellow-highlight font-semibold">¡Empieza hoy mismo y transforma tu cuerpo!</span>
-          </p>
         </div>
       </div>
     </section>

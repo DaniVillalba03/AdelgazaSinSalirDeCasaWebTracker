@@ -9,7 +9,7 @@ import { PricingSection } from "@/components/PricingSection";
 import { GuaranteeSection } from "@/components/GuaranteeSection";
 import { Home, Heart, CheckCircle, Facebook, Instagram, X } from "lucide-react";
 import WaveSeparator from "@/components/WaveSeparator";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const Index = () => {
   const [showExitIntent, setShowExitIntent] = useState(false);
@@ -18,6 +18,34 @@ const Index = () => {
   const [usuarioRechazoOferta, setUsuarioRechazoOferta] = useState(false);
   const [expandedBenefits, setExpandedBenefits] = useState(false);
   const [expandedMethod, setExpandedMethod] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [showUnmuteButton, setShowUnmuteButton] = useState(true);
+
+  // Auto-play video muted
+  useEffect(() => {
+    const playVideoMuted = async () => {
+      if (videoRef.current) {
+        try {
+          videoRef.current.muted = true;
+          await videoRef.current.play();
+        } catch (error) {
+          console.log('Autoplay blocked');
+        }
+      }
+    };
+
+    const timer = setTimeout(playVideoMuted, 300);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleUnmute = async () => {
+    if (videoRef.current) {
+      videoRef.current.muted = false;
+      videoRef.current.volume = 1.0;
+      await videoRef.current.play();
+      setShowUnmuteButton(false);
+    }
+  };
 
   useEffect(() => {
     let mouseLeftWindow = false;
@@ -180,14 +208,43 @@ const Index = () => {
                           rounded-2xl shadow-2xl hover-lift transition-all duration-500">
               <div className="relative bg-black rounded-xl overflow-hidden">
                 <video 
+                  ref={videoRef}
                   className="w-full h-auto aspect-video object-cover"
                   controls
-                  preload="metadata"
+                  playsInline
+                  preload="auto"
                   poster="/assets/images/hero/video-thumbnail.jpg"
                 >
                   <source src="/assets/videos/demo/video-demo.mp4" type="video/mp4" />
                   Tu navegador no soporta el elemento video.
                 </video>
+                
+                {/* Professional Unmute Button */}
+                {showUnmuteButton && (
+                  <div 
+                    className="absolute inset-0 flex items-center justify-center cursor-pointer z-20"
+                    onClick={handleUnmute}
+                  >
+                    <div className="relative">
+                      {/* Animated rings effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full animate-ping opacity-75"></div>
+                      
+                      {/* Main button */}
+                      <div className="relative bg-gradient-to-r from-yellow-400 via-orange-500 to-yellow-400 
+                                    text-black rounded-full p-8 shadow-2xl 
+                                    hover:scale-110 transition-all duration-300 
+                                    border-4 border-white/30 backdrop-blur-sm
+                                    flex flex-col items-center gap-3 min-w-[200px]">
+                        <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z"/>
+                        </svg>
+                        <span className="font-bold-caps text-xl text-center leading-tight">
+                          TOCA PARA<br/>ACTIVAR SONIDO
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -423,74 +480,124 @@ const Index = () => {
 
       {/* Course Modules Section - Black Background */}
       <section className="bg-black py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Top Section */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold text-white mb-4">
-              TENDRÁS ACCESO A <span className="text-yellow-400">6 NIVELES DE DIFICULTAD</span>
-            </h2>
-            <p className="text-white text-lg mb-2">
-              EL PRECIO NORMAL POR CADA NIVEL ES DE 50 DÓLARES, EL PROGRAMA COMPLETO
-            </p>
-            <p className="text-red-500 text-lg font-bold">
-              CUESTA <span className="line-through">300 DÓLARES</span>
-            </p>
-          </div>
+        <div className="max-w-7xl mx-auto">
+          {/* Two Column Layout */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-12">
+            {/* Left Column - 25 CUPOS + Info Text Below */}
+            <div className="text-center lg:text-left animate-fade-up">
+              {/* 25 CUPOS Section */}
+              <div className="relative inline-block mb-8">
+                {/* Urgency Badge */}
+                <div className="absolute -top-6 -right-4 md:-right-8 z-10">
+                  <div className="bg-purple-600 text-white px-3 py-1 rounded-full text-xs md:text-sm font-bold-caps flex items-center gap-1 animate-pulse-slow shadow-lg">
+                    <span className="text-yellow-400">⚡</span>
+                    URGENTE
+                  </div>
+                </div>
+                
+                {/* Main "25 CUPOS" Text with Premium Effects */}
+                <div className="relative">
+                  {/* Animated Background Glow */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-orange-500 to-yellow-400 rounded-2xl blur-2xl opacity-30 animate-pulse-slow"></div>
+                  
+                  <h1 className="font-bold-caps text-6xl md:text-7xl lg:text-8xl mb-3 relative"
+                      style={{
+                        filter: 'drop-shadow(0 0 20px rgba(255, 215, 0, 0.5))'
+                      }}>
+                    <span className="inline-block bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 bg-clip-text text-transparent"
+                          style={{
+                            WebkitBackgroundClip: 'text',
+                            WebkitTextFillColor: 'transparent',
+                            backgroundClip: 'text',
+                            animation: 'scaleText 2s ease-in-out infinite',
+                            transformOrigin: 'center'
+                          }}>25</span>
+                    <span className="text-white ml-2 md:ml-4">
+                      CUPOS
+                    </span>
+                  </h1>
+                </div>
+              </div>
+              
+              <h2 className="font-bold-caps text-xl md:text-2xl lg:text-3xl text-white/90 mb-6 tracking-wider">
+                DISPONIBLES HASTA{" "}
+                <span className="text-yellow-highlight">HOY</span>
+              </h2>
+              
+              {/* Decorative Line */}
+              <div className="w-32 h-1 bg-gradient-to-r from-purple-600 via-yellow-400 to-purple-600 mx-auto lg:mx-0 rounded-full animate-pulse-slow mb-8"></div>
 
-          {/* Course Image */}
-          <div className="mb-8">
-            <img
-              src="/assets/images/program/MODULOS-min.png"
-              alt="MÓDULOS DEL CURSO - 6 Niveles de dificultad"
-              className="w-full h-auto max-w-2xl mx-auto object-contain"
-            />
-          </div>
-
-          {/* Main Offer Text */}
-          <div className="mb-8">
-            <h3 className="text-3xl font-bold text-white mb-4">
-              LLEVA <span className="text-yellow-400">TODOS</span> LOS NIVELES POR EL <span className="text-yellow-400">PRECIO DE UNO</span>
-            </h3>
-          </div>
-
-          {/* Pricing */}
-          <div className="mb-8">
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <span className="text-gray-400 text-3xl line-through">$300</span>
-              <span className="text-green-400 text-5xl font-bold">$49.99</span>
+              {/* Info Text from Red Box - Below 25 CUPOS */}
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                  TENDRÁS ACCESO A <span className="text-yellow-400">6 NIVELES DE DIFICULTAD</span>
+                </h2>
+                <p className="text-white text-lg mb-2">
+                  EL PRECIO NORMAL POR CADA NIVEL ES DE 50 DÓLARES, EL PROGRAMA COMPLETO
+                </p>
+                <p className="text-red-500 text-xl font-bold">
+                  CUESTA <span className="line-through">300 DÓLARES</span>
+                </p>
+              </div>
             </div>
-            <p className="text-white text-sm">
-              (La oferta convertida a tu moneda local)
-            </p>
+
+            {/* Right Column - Course Modules Single Image with Border */}
+            <div className="animate-fade-up-delay-2">
+              <div className="relative p-1 bg-gradient-to-r from-purple-600 via-yellow-400 to-purple-600 rounded-2xl shadow-2xl">
+                <div className="relative bg-black rounded-xl p-4">
+                  <img
+                    src="/assets/images/program/MODULOS-min.png"
+                    alt="6 Niveles de Dificultad - Programa Completo"
+                    className="w-full h-auto object-contain rounded-lg"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Countdown Timer */}
-          <div className="mb-8">
-            <p className="text-yellow-400 text-xl font-bold mb-4">
-              LA OFERTA TERMINARÁ EN...
-            </p>
-            <CountdownTimer />
-          </div>
+          {/* Bottom Section - Centered */}
+          <div className="text-center max-w-4xl mx-auto">
+            {/* Main Offer Text */}
+            <div className="mb-8 animate-fade-up-delay-3">
+              <h3 className="text-3xl font-bold text-white mb-4">
+                LLEVA <span className="text-yellow-400">TODOS</span> LOS NIVELES POR EL <span className="text-yellow-400">PRECIO DE UNO</span>
+              </h3>
+            </div>
 
-          {/* CTA Button */}
-          <div className="mb-8">
-            <DanceFitButton 
-              variant="primary"
-              className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold py-4 px-8 rounded-full text-xl shadow-lg transform hover:scale-105 transition-all duration-200"
-            >
-              INSCRÍBETE AL PROGRAMA AQUÍ
-            </DanceFitButton>
-          </div>
+            {/* Pricing */}
+            <div className="mb-8">
+              <div className="flex items-center justify-center gap-4 mb-4">
+                <span className="text-gray-400 text-3xl line-through">$300</span>
+                <span className="text-green-400 text-5xl font-bold">$49.99</span>
+              </div>
+              <p className="text-white text-sm">
+                (La oferta convertida a tu moneda local)
+              </p>
+            </div>
 
-          {/* Payment Logos */}
-          <PaymentLogos />
+            {/* Countdown Timer */}
+            <div className="mb-8">
+              <p className="text-yellow-400 text-xl font-bold mb-4">
+                LA OFERTA TERMINARÁ EN...
+              </p>
+              <CountdownTimer />
+            </div>
+
+            {/* CTA Button */}
+            <div className="mb-8">
+              <DanceFitButton 
+                variant="primary"
+                className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold py-4 px-8 rounded-full text-xl shadow-lg transform hover:scale-105 transition-all duration-200"
+              >
+                INSCRÍBETE AL PROGRAMA AQUÍ
+              </DanceFitButton>
+            </div>
+
+            {/* Payment Logos */}
+            <PaymentLogos />
+          </div>
         </div>
       </section>
-
-      {/* Pricing Section */}
-      <PricingSection ofertaEspecialActivada={ofertaEspecialActivada} />
-
-      {/* Countdown Timer (moved into Guarantee column) */}
 
       {/* Testimonials */}
       <TestimonialsSection />

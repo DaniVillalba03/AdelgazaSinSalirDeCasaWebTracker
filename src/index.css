@@ -276,6 +276,16 @@
     background-size: 200% 200%;
   }
 
+  /* Scale Text Animation - For "25" number */
+  @keyframes scaleText {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+
   /* Hide Scrollbar */
   .scrollbar-hide {
     -ms-overflow-style: none;  /* IE and Edge */

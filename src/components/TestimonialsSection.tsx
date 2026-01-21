@@ -192,15 +192,17 @@ export const TestimonialsSection = () => {
         </div>
         
         {/* Testimonials Video - Premium Frame */}
-        <div className="max-w-3xl mx-auto mb-12 animate-fade-up-delay-3">
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl p-1 bg-gradient-to-r from-purple-600 via-yellow-400 to-purple-600">
-            <div className="relative rounded-xl overflow-hidden bg-black">
+        <div className="max-w-4xl mx-auto mb-12 animate-fade-up-delay-3">
+          <div className="relative p-1 bg-gradient-to-r from-purple-600 via-yellow-400 to-purple-600 
+                        rounded-2xl shadow-2xl hover-lift transition-all duration-500">
+            <div className="relative bg-black rounded-xl overflow-hidden">
               <video 
                 controls 
-                className="w-full h-auto"
+                preload="metadata"
+                className="w-full h-auto aspect-video object-cover"
                 poster="/assets/images/testimonials/video-poster.jpg"
               >
-                <source src="/assets/videos/testimonials/testimonios_adelgaza.mp4" type="video/mp4" />
+                <source src="/assets/videos/testimonials/testimonios_adelgaza.mp4#t=0.001" type="video/mp4" />
                 Tu navegador no soporta el elemento de video.
               </video>
             </div>
