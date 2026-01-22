@@ -60,18 +60,18 @@ export const GuaranteeSection = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8">
               <div className="glassmorphic p-4 rounded-xl border border-green-400/30 hover-scale">
                 <CheckCircle className="w-8 h-8 md:w-10 md:h-10 text-green-400 mx-auto mb-3" fill="currentColor" />
-                <p className="text-white font-bold text-sm md:text-base">Sin Preguntas</p>
-                <p className="text-white/60 text-xs md:text-sm mt-1">Proceso rápido</p>
+                <p className="text-white font-bold text-xs sm:text-sm md:text-base break-words">Sin Preguntas</p>
+                <p className="text-white/60 text-xs md:text-sm mt-1 break-words">Proceso rápido</p>
               </div>
               <div className="glassmorphic p-4 rounded-xl border border-green-400/30 hover-scale">
                 <Award className="w-8 h-8 md:w-10 md:h-10 text-green-400 mx-auto mb-3" />
-                <p className="text-white font-bold text-sm md:text-base">100% Seguro</p>
-                <p className="text-white/60 text-xs md:text-sm mt-1">Garantizado</p>
+                <p className="text-white font-bold text-xs sm:text-sm md:text-base break-words">100% Seguro</p>
+                <p className="text-white/60 text-xs md:text-sm mt-1 break-words">Garantizado</p>
               </div>
               <div className="glassmorphic p-4 rounded-xl border border-green-400/30 hover-scale">
                 <TrendingUp className="w-8 h-8 md:w-10 md:h-10 text-green-400 mx-auto mb-3" />
-                <p className="text-white font-bold text-sm md:text-base">Reembolso Total</p>
-                <p className="text-white/60 text-xs md:text-sm mt-1">Sin complicaciones</p>
+                <p className="text-white font-bold text-xs sm:text-sm md:text-base break-words">Reembolso<br className="hidden sm:inline" /> Total</p>
+                <p className="text-white/60 text-xs md:text-sm mt-1 break-words">Sin complicaciones</p>
               </div>
             </div>
             
