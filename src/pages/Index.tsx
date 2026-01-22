@@ -1551,20 +1551,20 @@ const Index = () => {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {/* Stat 1 - Estudiantes Transformados */}
             <div className="group relative">
               <div className="absolute -inset-1 bg-gradient-to-b from-yellow-400 to-purple-600 rounded-2xl opacity-20 group-hover:opacity-40 blur-xl transition-all duration-500"></div>
-              <div className="relative glassmorphic-dark p-8 rounded-2xl border border-yellow-400/30 group-hover:border-yellow-400/60 transition-all duration-300 text-center h-full">
-                <div className="mb-4">
-                  <svg className="w-16 h-16 mx-auto text-yellow-400" viewBox="0 0 24 24" fill="currentColor">
+              <div className="relative glassmorphic-dark p-6 md:p-8 rounded-2xl border border-yellow-400/30 group-hover:border-yellow-400/60 transition-all duration-300 text-center h-full">
+                <div className="mb-3 md:mb-4">
+                  <svg className="w-12 h-12 md:w-16 md:h-16 mx-auto text-yellow-400" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
                   </svg>
                 </div>
                 <AnimatedCounter 
                   end={3500}
                   suffix="+"
-                  className="text-5xl font-bold-caps text-yellow-400 mb-2"
+                  className="text-4xl md:text-5xl font-bold-caps text-yellow-400 mb-2"
                 />
                 <p className="text-white/80 text-sm uppercase tracking-wide">
                   Estudiantes<br/>Transformados
@@ -1575,9 +1575,9 @@ const Index = () => {
             {/* Stat 2 - Kilos Perdidos */}
             <div className="group relative">
               <div className="absolute -inset-1 bg-gradient-to-b from-yellow-400 to-purple-600 rounded-2xl opacity-20 group-hover:opacity-40 blur-xl transition-all duration-500"></div>
-              <div className="relative glassmorphic-dark p-8 rounded-2xl border border-yellow-400/30 group-hover:border-yellow-400/60 transition-all duration-300 text-center h-full">
-                <div className="mb-4">
-                  <svg className="w-16 h-16 mx-auto text-green-400" viewBox="0 0 24 24" fill="currentColor">
+              <div className="relative glassmorphic-dark p-6 md:p-8 rounded-2xl border border-yellow-400/30 group-hover:border-yellow-400/60 transition-all duration-300 text-center h-full">
+                <div className="mb-3 md:mb-4">
+                  <svg className="w-12 h-12 md:w-16 md:h-16 mx-auto text-green-400" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm4-8c0 2.21-1.79 4-4 4s-4-1.79-4-4 1.79-4 4-4 4 1.79 4 4z"/>
                   </svg>
                 </div>
@@ -1585,7 +1585,7 @@ const Index = () => {
                   end={8}
                   prefix="~"
                   suffix=" kg"
-                  className="text-5xl font-bold-caps text-green-400 mb-2"
+                  className="text-4xl md:text-5xl font-bold-caps text-green-400 mb-2"
                 />
                 <p className="text-white/80 text-sm uppercase tracking-wide">
                   Promedio de Peso<br/>Perdido
@@ -1596,16 +1596,16 @@ const Index = () => {
             {/* Stat 3 - Años de Experiencia */}
             <div className="group relative">
               <div className="absolute -inset-1 bg-gradient-to-b from-yellow-400 to-purple-600 rounded-2xl opacity-20 group-hover:opacity-40 blur-xl transition-all duration-500"></div>
-              <div className="relative glassmorphic-dark p-8 rounded-2xl border border-yellow-400/30 group-hover:border-yellow-400/60 transition-all duration-300 text-center h-full">
-                <div className="mb-4">
-                  <svg className="w-16 h-16 mx-auto text-purple-400" viewBox="0 0 24 24" fill="currentColor">
+              <div className="relative glassmorphic-dark p-6 md:p-8 rounded-2xl border border-yellow-400/30 group-hover:border-yellow-400/60 transition-all duration-300 text-center h-full">
+                <div className="mb-3 md:mb-4">
+                  <svg className="w-12 h-12 md:w-16 md:h-16 mx-auto text-purple-400" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
                   </svg>
                 </div>
                 <AnimatedCounter 
                   end={15}
                   suffix="+"
-                  className="text-5xl font-bold-caps text-purple-400 mb-2"
+                  className="text-4xl md:text-5xl font-bold-caps text-purple-400 mb-2"
                 />
                 <p className="text-white/80 text-sm uppercase tracking-wide">
                   Años de<br/>Experiencia
@@ -1616,16 +1616,16 @@ const Index = () => {
             {/* Stat 4 - Países */}
             <div className="group relative">
               <div className="absolute -inset-1 bg-gradient-to-b from-yellow-400 to-purple-600 rounded-2xl opacity-20 group-hover:opacity-40 blur-xl transition-all duration-500"></div>
-              <div className="relative glassmorphic-dark p-8 rounded-2xl border border-yellow-400/30 group-hover:border-yellow-400/60 transition-all duration-300 text-center h-full">
-                <div className="mb-4">
-                  <svg className="w-16 h-16 mx-auto text-blue-400" viewBox="0 0 24 24" fill="currentColor">
+              <div className="relative glassmorphic-dark p-6 md:p-8 rounded-2xl border border-yellow-400/30 group-hover:border-yellow-400/60 transition-all duration-300 text-center h-full">
+                <div className="mb-3 md:mb-4">
+                  <svg className="w-12 h-12 md:w-16 md:h-16 mx-auto text-blue-400" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
                   </svg>
                 </div>
                 <AnimatedCounter 
                   end={18}
                   suffix="+"
-                  className="text-5xl font-bold-caps text-blue-400 mb-2"
+                  className="text-4xl md:text-5xl font-bold-caps text-blue-400 mb-2"
                 />
                 <p className="text-white/80 text-sm uppercase tracking-wide">
                   Países<br/>Alcanzados
@@ -1721,41 +1721,41 @@ const Index = () => {
         </div>
         <div className="max-w-4xl mx-auto">
           {/* Social Media Links */}
-          <div className="flex flex-wrap justify-center items-center gap-8 mb-8">
+          <div className="flex flex-col md:flex-row flex-wrap justify-center items-center gap-4 md:gap-8 mb-8 px-4">
             <a 
               href="https://www.facebook.com/tu-pagina" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 text-secondary-foreground hover:text-yellow-highlight transition-all duration-300 transform hover:scale-105"
+              className="group flex items-center gap-3 text-secondary-foreground hover:text-yellow-highlight transition-all duration-300 transform hover:scale-105 w-full md:w-auto justify-center md:justify-start"
             >
-              <div className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center group-hover:border-yellow-highlight group-hover:bg-yellow-highlight/10 group-hover:shadow-lg group-hover:shadow-yellow-400/50 transition-all duration-300 animate-pulse-slow">
-                <Facebook className="w-6 h-6" />
+              <div className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center group-hover:border-yellow-highlight group-hover:bg-yellow-highlight/10 group-hover:shadow-lg group-hover:shadow-yellow-400/50 transition-all duration-300 animate-pulse-slow flex-shrink-0">
+                <Facebook className="w-5 h-5" />
               </div>
-              <span className="font-bold text-lg">Síguenos en Facebook</span>
+              <span className="font-bold text-base md:text-lg">Síguenos en Facebook</span>
             </a>
             <a 
               href="https://www.instagram.com/tu-cuenta" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 text-secondary-foreground hover:text-yellow-highlight transition-all duration-300 transform hover:scale-105"
+              className="group flex items-center gap-3 text-secondary-foreground hover:text-yellow-highlight transition-all duration-300 transform hover:scale-105 w-full md:w-auto justify-center md:justify-start"
             >
-              <div className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center group-hover:border-yellow-highlight group-hover:bg-yellow-highlight/10 group-hover:shadow-lg group-hover:shadow-yellow-400/50 transition-all duration-300 animate-pulse-slow" style={{ animationDelay: '0.5s' }}>
-                <Instagram className="w-6 h-6" />
+              <div className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center group-hover:border-yellow-highlight group-hover:bg-yellow-highlight/10 group-hover:shadow-lg group-hover:shadow-yellow-400/50 transition-all duration-300 animate-pulse-slow flex-shrink-0" style={{ animationDelay: '0.5s' }}>
+                <Instagram className="w-5 h-5" />
               </div>
-              <span className="font-bold text-lg">Síguenos en Instagram</span>
+              <span className="font-bold text-base md:text-lg">Síguenos en Instagram</span>
             </a>
             <a 
               href="https://www.tiktok.com/@tu-cuenta" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 text-secondary-foreground hover:text-yellow-highlight transition-all duration-300 transform hover:scale-105"
+              className="group flex items-center gap-3 text-secondary-foreground hover:text-yellow-highlight transition-all duration-300 transform hover:scale-105 w-full md:w-auto justify-center md:justify-start"
             >
-              <div className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center group-hover:border-yellow-highlight group-hover:bg-yellow-highlight/10 group-hover:shadow-lg group-hover:shadow-yellow-400/50 transition-all duration-300 animate-pulse-slow" style={{ animationDelay: '1s' }}>
-                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+              <div className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center group-hover:border-yellow-highlight group-hover:bg-yellow-highlight/10 group-hover:shadow-lg group-hover:shadow-yellow-400/50 transition-all duration-300 animate-pulse-slow flex-shrink-0" style={{ animationDelay: '1s' }}>
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
                 </svg>
               </div>
-              <span className="font-bold text-lg">Síguenos en Tiktok</span>
+              <span className="font-bold text-base md:text-lg">Síguenos en Tiktok</span>
             </a>
           </div>
 
