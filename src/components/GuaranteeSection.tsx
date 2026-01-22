@@ -12,44 +12,44 @@ export const GuaranteeSection = () => {
 
       <div className="max-w-5xl mx-auto text-center relative z-10">
         {/* Header with Shield Animation */}
-        <div className="flex items-center justify-center gap-2 md:gap-4 mb-8 animate-fade-up px-2">
-          <Shield className="w-8 h-8 md:w-16 md:h-16 text-green-400 animate-pulse-slow drop-shadow-[0_0_20px_rgba(74,222,128,0.5)] flex-shrink-0" 
+        <div className="flex items-center justify-center gap-1.5 md:gap-4 mb-6 md:mb-8 animate-fade-up px-2">
+          <Shield className="w-5 h-5 md:w-16 md:h-16 text-green-400 animate-pulse-slow drop-shadow-[0_0_20px_rgba(74,222,128,0.5)] flex-shrink-0" 
                   fill="currentColor" />
-          <h2 className="font-bold-caps text-lg md:text-4xl lg:text-5xl text-white text-center leading-tight">
+          <h2 className="font-bold-caps text-sm md:text-4xl lg:text-5xl text-white text-center leading-tight">
             <span className="hidden md:inline">POLÍTICA Y GARANTÍA DE SATISFACCIÓN</span>
             <span className="md:hidden">GARANTÍA<br />DE SATISFACCIÓN</span>
           </h2>
-          <Shield className="w-8 h-8 md:w-16 md:h-16 text-green-400 animate-pulse-slow drop-shadow-[0_0_20px_rgba(74,222,128,0.5)] flex-shrink-0" 
+          <Shield className="w-5 h-5 md:w-16 md:h-16 text-green-400 animate-pulse-slow drop-shadow-[0_0_20px_rgba(74,222,128,0.5)] flex-shrink-0" 
                   fill="currentColor" />
         </div>
         
         {/* Main Guarantee Card */}
-        <div className="glassmorphic-dark p-6 md:p-10 rounded-2xl shadow-2xl mb-8 border-2 border-green-500/30 
+        <div className="glassmorphic-dark p-4 md:p-10 rounded-xl md:rounded-2xl shadow-2xl mb-6 md:mb-8 border-2 border-green-500/30 
                        animate-fade-up-delay-1 hover-lift relative overflow-hidden">
           {/* Glow Effect */}
-          <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-600/10 rounded-2xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-600/10 rounded-xl md:rounded-2xl"></div>
           
           <div className="relative z-10">
             {/* 7 Days Badge */}
-            <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="flex items-center justify-center gap-2 md:gap-4 mb-4 md:mb-8">
               <div className="relative">
                 <div className="absolute inset-0 bg-green-400 rounded-full blur-xl opacity-50 animate-pulse-slow"></div>
-                <div className="relative bg-gradient-to-br from-green-400 to-green-600 p-6 md:p-8 rounded-full 
-                              shadow-lg hover-scale cursor-pointer border-4 border-white/20">
-                  <Clock className="w-12 h-12 md:w-16 md:h-16 text-white" strokeWidth={3} />
+                <div className="relative bg-gradient-to-br from-green-400 to-green-600 p-3 md:p-8 rounded-full 
+                              shadow-lg hover-scale cursor-pointer border-2 md:border-4 border-white/20">
+                  <Clock className="w-8 h-8 md:w-16 md:h-16 text-white" strokeWidth={3} />
                 </div>
               </div>
               <div className="text-left">
-                <span className="font-bold-caps text-4xl md:text-5xl lg:text-6xl text-green-400 block leading-none mb-2"
+                <span className="font-bold-caps text-2xl md:text-5xl lg:text-6xl text-green-400 block leading-none mb-1 md:mb-2"
                       style={{ textShadow: '0 0 20px rgba(74, 222, 128, 0.5)' }}>
                   7 DÍAS
                 </span>
-                <span className="font-bold-caps text-xl md:text-2xl text-white/90">DE GARANTÍA</span>
+                <span className="font-bold-caps text-sm md:text-2xl text-white/90">DE GARANTÍA</span>
               </div>
             </div>
             
             {/* Description */}
-            <p className="text-base md:text-lg lg:text-xl text-white/90 leading-relaxed mb-8 max-w-3xl mx-auto">
+            <p className="text-xs md:text-lg lg:text-xl text-white/90 leading-relaxed mb-4 md:mb-8 max-w-3xl mx-auto px-1">
               Tienes <strong className="text-green-400">7 días</strong> a partir de la compra para probar el programa{" "}
               <strong className="text-yellow-400">ADELGAZA SIN SALIR DE CASA</strong>. Si dentro de ese período nuestro programa no cumple y/o supera tus expectativas,{" "}
               <strong className="text-green-400 text-xl md:text-2xl">vamos a devolver tu dinero SIN hacer preguntas.</strong>

@@ -40,42 +40,42 @@ export const FAQSection = () => {
 
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-12 animate-fade-up">
-          <div className="flex items-center justify-center gap-2 md:gap-3 mb-4 px-2">
-            <HelpCircle className="w-6 h-6 md:w-10 md:h-10 text-yellow-highlight animate-pulse-slow flex-shrink-0" />
-            <h2 className="font-bold-caps text-xl md:text-4xl lg:text-5xl text-white text-center">
+        <div className="text-center mb-6 md:mb-12 animate-fade-up">
+          <div className="flex items-center justify-center gap-1.5 md:gap-3 mb-3 md:mb-4">
+            <HelpCircle className="w-4 h-4 md:w-10 md:h-10 text-yellow-highlight animate-pulse-slow flex-shrink-0" />
+            <h2 className="font-bold-caps text-base md:text-4xl lg:text-5xl text-white text-center leading-tight">
               <span className="hidden md:inline">PREGUNTAS FRECUENTES</span>
               <span className="md:hidden">PREGUNTAS<br />FRECUENTES</span>
             </h2>
-            <Sparkles className="w-6 h-6 md:w-10 md:h-10 text-purple-400 animate-pulse-slow flex-shrink-0" />
+            <Sparkles className="w-4 h-4 md:w-10 md:h-10 text-purple-400 animate-pulse-slow flex-shrink-0" />
           </div>
-          <p className="text-white/70 text-base md:text-lg max-w-2xl mx-auto">
+          <p className="text-white/70 text-xs md:text-lg max-w-2xl mx-auto px-2">
             Resuelve todas tus dudas antes de comenzar tu transformación
           </p>
         </div>
         
-        <Accordion type="single" collapsible className="w-full space-y-4 animate-fade-up-delay-1">
+        <Accordion type="single" collapsible className="w-full space-y-2 md:space-y-4 animate-fade-up-delay-1">
           {faqs.map((faq, index) => (
             <AccordionItem 
               key={index} 
               value={`item-${index}`}
-              className="glassmorphic-dark rounded-xl border border-white/10 px-6 md:px-8 
+              className="glassmorphic-dark rounded-lg md:rounded-xl border border-white/10 px-2 py-1 md:px-8 
                          hover-lift transition-all duration-300
                          hover:border-purple-500/30 group"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <AccordionTrigger className="font-bold-caps text-left text-white hover:text-yellow-highlight 
-                                          text-base md:text-lg py-5 transition-colors duration-300
+                                          text-xs md:text-lg py-3 md:py-5 transition-colors duration-300
                                           [&[data-state=open]]:text-yellow-highlight">
-                <div className="flex items-center gap-3">
-                  <span className="text-2xl md:text-3xl group-hover:scale-110 transition-transform duration-300">
+                <div className="flex items-center gap-1.5 md:gap-3 pr-1">
+                  <span className="text-base md:text-3xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                     {faq.icon}
                   </span>
-                  <span>{faq.question}</span>
+                  <span className="leading-tight text-left">{faq.question}</span>
                 </div>
               </AccordionTrigger>
-              <AccordionContent className="text-white/80 leading-relaxed pt-2 pb-5 text-sm md:text-base
-                                         border-t border-white/5 mt-2">
+              <AccordionContent className="text-white/80 leading-relaxed pt-2 pb-3 md:pb-5 text-[10px] md:text-base
+                                         border-t border-white/5 mt-1 pr-1 md:pr-2">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>

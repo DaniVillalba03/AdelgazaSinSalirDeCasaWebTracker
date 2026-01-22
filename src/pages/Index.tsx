@@ -1659,23 +1659,25 @@ const Index = () => {
         </div>
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 80px, rgba(139, 92, 246, 0.1) 80px, rgba(139, 92, 246, 0.1) 160px)' }}></div>
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 lg:gap-16 items-start">
             {/* Left: FAQ Accordion */}
-            <div id="faq-section" className="bg-gradient-to-br from-gray-900/95 via-black to-gray-900/95 rounded-2xl shadow-2xl p-8 border-2 border-purple-500/30 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm">
+            <div id="faq-section" className="bg-gradient-to-br from-gray-900/95 via-black to-gray-900/95 rounded-xl md:rounded-2xl shadow-2xl p-4 md:p-8 border-2 border-purple-500/30 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm">
               <FAQSection />
             </div>
 
-            {/* Right: Guarantee / Timer / CTA */}
-            <div className="space-y-8">
+            {/* Right: Guarantee */}
+            <div className="space-y-6 md:space-y-8 lg:col-span-1">
               {/* Guarantee Section with Premium Card */}
-              <div className="bg-gradient-to-br from-green-900/90 via-emerald-950/95 to-green-950/90 rounded-2xl shadow-2xl p-8 border-2 border-green-500/30 hover:border-green-400/50 transition-all duration-300 backdrop-blur-sm">
+              <div className="bg-gradient-to-br from-green-900/90 via-emerald-950/95 to-green-950/90 rounded-xl md:rounded-2xl shadow-2xl p-4 md:p-8 border-2 border-green-500/30 hover:border-green-400/50 transition-all duration-300 backdrop-blur-sm">
                 <GuaranteeSection />
               </div>
+            </div>
 
-              {/* CTA Card - Premium Design */}
-              <div className="bg-gradient-to-br from-purple-900 via-purple-800 to-purple-900 rounded-2xl shadow-2xl p-8 border-2 border-yellow-400/30">
+            {/* CTA Card - Premium Design - Centered on Desktop */}
+            <div className="lg:col-span-2 flex justify-center">
+              <div className="bg-gradient-to-br from-purple-900 via-purple-800 to-purple-900 rounded-xl md:rounded-2xl shadow-2xl p-6 md:p-8 border-2 border-yellow-400/30 w-full lg:max-w-3xl">
                 {/* Timer Section */}
-                <div className="mb-8">
+                <div className="mb-6 md:mb-8">
                   <p className="text-yellow-400 text-xl md:text-2xl font-bold-caps mb-6 text-center tracking-wide">
                     LA OFERTA TERMINARÁ EN...
                   </p>
