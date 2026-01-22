@@ -41,12 +41,13 @@ export const FAQSection = () => {
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-12 animate-fade-up">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <HelpCircle className="w-8 h-8 md:w-10 md:h-10 text-yellow-highlight animate-pulse-slow" />
-            <h2 className="font-bold-caps text-3xl md:text-4xl lg:text-5xl text-white">
-              PREGUNTAS FRECUENTES
+          <div className="flex items-center justify-center gap-2 md:gap-3 mb-4 px-2">
+            <HelpCircle className="w-6 h-6 md:w-10 md:h-10 text-yellow-highlight animate-pulse-slow flex-shrink-0" />
+            <h2 className="font-bold-caps text-xl md:text-4xl lg:text-5xl text-white text-center">
+              <span className="hidden md:inline">PREGUNTAS FRECUENTES</span>
+              <span className="md:hidden">PREGUNTAS<br />FRECUENTES</span>
             </h2>
-            <Sparkles className="w-8 h-8 md:w-10 md:h-10 text-purple-400 animate-pulse-slow" />
+            <Sparkles className="w-6 h-6 md:w-10 md:h-10 text-purple-400 animate-pulse-slow flex-shrink-0" />
           </div>
           <p className="text-white/70 text-base md:text-lg max-w-2xl mx-auto">
             Resuelve todas tus dudas antes de comenzar tu transformación

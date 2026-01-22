@@ -12,15 +12,14 @@ export const GuaranteeSection = () => {
 
       <div className="max-w-5xl mx-auto text-center relative z-10">
         {/* Header with Shield Animation */}
-        <div className="flex items-center justify-center gap-4 mb-8 animate-fade-up">
-          <Shield className="w-12 h-12 md:w-16 md:h-16 text-green-400 animate-pulse-slow drop-shadow-[0_0_20px_rgba(74,222,128,0.5)]" 
+        <div className="flex items-center justify-center gap-2 md:gap-4 mb-8 animate-fade-up px-2">
+          <Shield className="w-8 h-8 md:w-16 md:h-16 text-green-400 animate-pulse-slow drop-shadow-[0_0_20px_rgba(74,222,128,0.5)] flex-shrink-0" 
                   fill="currentColor" />
-          <h2 className="font-bold-caps text-3xl md:text-4xl lg:text-5xl text-white text-center leading-tight">
-            POLÍTICA Y GARANTÍA
-            <br className="md:hidden" />
-            <span className="text-green-400"> DE SATISFACCIÓN</span>
+          <h2 className="font-bold-caps text-lg md:text-4xl lg:text-5xl text-white text-center leading-tight">
+            <span className="hidden md:inline">POLÍTICA Y GARANTÍA DE SATISFACCIÓN</span>
+            <span className="md:hidden">GARANTÍA<br />DE SATISFACCIÓN</span>
           </h2>
-          <Shield className="w-12 h-12 md:w-16 md:h-16 text-green-400 animate-pulse-slow drop-shadow-[0_0_20px_rgba(74,222,128,0.5)]" 
+          <Shield className="w-8 h-8 md:w-16 md:h-16 text-green-400 animate-pulse-slow drop-shadow-[0_0_20px_rgba(74,222,128,0.5)] flex-shrink-0" 
                   fill="currentColor" />
         </div>
         

@@ -530,8 +530,10 @@ const Index = () => {
                   className="w-full h-auto aspect-video object-cover"
                   controls
                   playsInline
-                  preload="auto"
+                  webkit-playsinline="true"
+                  preload="metadata"
                   poster="/assets/images/hero/video-thumbnail.jpg"
+                  style={{ WebkitTransform: 'translateZ(0)' }}
                 >
                   <source src="/assets/videos/demo/video-demo.mp4" type="video/mp4" />
                   Tu navegador no soporta el elemento video.
@@ -1072,22 +1074,27 @@ const Index = () => {
             </div>
 
             {/* Countdown Timer */}
-            <div className="mb-8">
-              <p className="text-yellow-400 text-xl font-bold mb-4">
+            <div className="mb-8 px-4">
+              <p className="text-yellow-400 text-base md:text-xl font-bold mb-4 text-center">
                 LA OFERTA TERMINARÁ EN...
               </p>
               <CountdownTimer />
             </div>
 
             {/* CTA Button */}
-            <div className="mb-8">
+            <div className="mb-8 px-4">
               <DanceFitButton 
                 onClick={handleInscribirse}
                 variant="primary"
                 disabled={isLoading}
-                className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold py-4 px-8 rounded-full text-xl shadow-lg transform hover:scale-105 transition-all duration-200 disabled:opacity-50"
+                className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold py-3 md:py-4 px-4 md:px-8 rounded-full text-base md:text-xl shadow-lg transform hover:scale-105 transition-all duration-200 disabled:opacity-50 w-full md:w-auto"
               >
-                {isLoading ? 'PROCESANDO...' : 'SÍ, QUIERO TRANSFORMAR MI CUERPO'}
+                {isLoading ? 'PROCESANDO...' : (
+                  <span className="block">
+                    <span className="hidden md:inline">SÍ, QUIERO TRANSFORMAR MI CUERPO</span>
+                    <span className="md:hidden">QUIERO TRANSFORMARME</span>
+                  </span>
+                )}
               </DanceFitButton>
             </div>
 
@@ -1100,11 +1107,11 @@ const Index = () => {
             <PaymentLogos />
 
             {/* Comparison Table */}
-            <div className="mt-12 glassmorphic-dark p-6 md:p-8 rounded-2xl border-2 border-yellow-400/30 backdrop-blur-xl">
-              <h3 className="font-bold-caps text-2xl md:text-3xl text-white mb-6 text-center">
+            <div className="mt-12 glassmorphic-dark p-4 md:p-6 lg:p-8 rounded-2xl border-2 border-yellow-400/30 backdrop-blur-xl mx-2 md:mx-0">
+              <h3 className="font-bold-caps text-xl md:text-2xl lg:text-3xl text-white mb-6 text-center px-2">
                 ¿QUÉ OBTENDRÁS CON ESTE PROGRAMA?
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                 {/* Left Column - Con el Programa */}
                 <div className="bg-gradient-to-br from-green-900/50 to-emerald-950/50 rounded-xl p-6 border-2 border-green-400/50">
                   <div className="flex items-center gap-3 mb-4">
@@ -1479,15 +1486,16 @@ const Index = () => {
             <div className="group relative transform hover:-translate-y-3 transition-all duration-500">
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-green-400 to-purple-600 rounded-3xl opacity-0 group-hover:opacity-30 blur-xl transition-all duration-500"></div>
               
-              <div className="relative bg-gradient-to-br from-purple-900/60 to-purple-950/80 rounded-2xl p-6 border border-purple-500/30 group-hover:border-green-400/60 transition-all duration-500 shadow-xl backdrop-blur-sm">
-                <h3 className="font-bold-caps text-sm md:text-base text-white mb-5 leading-tight min-h-[60px] flex items-center justify-center group-hover:text-green-400 transition-colors duration-300">
-                  ACCESO A NUESTRO WHATSAPP PERSONAL PARA ASESORÍA Y ACOMPAÑAMIENTO PERSONALIZADO
+              <div className="relative bg-gradient-to-br from-purple-900/60 to-purple-950/80 rounded-2xl p-4 md:p-6 border border-purple-500/30 group-hover:border-green-400/60 transition-all duration-500 shadow-xl backdrop-blur-sm">
+                <h3 className="font-bold-caps text-xs md:text-base text-white mb-4 md:mb-5 leading-tight min-h-[50px] md:min-h-[60px] flex items-center justify-center group-hover:text-green-400 transition-colors duration-300">
+                  <span className="hidden md:inline">ACCESO A NUESTRO WHATSAPP PERSONAL PARA ASESORÍA Y ACOMPAÑAMIENTO PERSONALIZADO</span>
+                  <span className="md:hidden text-center">WHATSAPP PERSONAL<br />ASESORÍA Y ACOMPAÑAMIENTO</span>
                 </h3>
-                <div className="relative overflow-hidden rounded-xl flex items-center justify-center py-8">
+                <div className="relative overflow-hidden rounded-xl flex items-center justify-center py-4 md:py-8">
                   <img
                     src="/assets/images/hero/whatsapp.png"
                     alt="WhatsApp"
-                    className="w-auto h-32 md:h-40 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-700"
+                    className="w-auto h-20 md:h-32 lg:h-40 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-700"
                   />
                 </div>
               </div>
@@ -1497,15 +1505,16 @@ const Index = () => {
             <div className="group relative transform hover:-translate-y-3 transition-all duration-500">
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-blue-400 to-purple-600 rounded-3xl opacity-0 group-hover:opacity-30 blur-xl transition-all duration-500"></div>
               
-              <div className="relative bg-gradient-to-br from-purple-900/60 to-purple-950/80 rounded-2xl p-6 border border-purple-500/30 group-hover:border-blue-400/60 transition-all duration-500 shadow-xl backdrop-blur-sm">
-                <h3 className="font-bold-caps text-sm md:text-base text-white mb-5 leading-tight min-h-[60px] flex items-center justify-center group-hover:text-blue-400 transition-colors duration-300">
-                  ACCESO A NUESTRO GRUPO EXCLUSIVO DE FACEBOOK EN DONDE TE APOYAMOS Y MOTIVAMOS SIEMPRE
+              <div className="relative bg-gradient-to-br from-purple-900/60 to-purple-950/80 rounded-2xl p-4 md:p-6 border border-purple-500/30 group-hover:border-blue-400/60 transition-all duration-500 shadow-xl backdrop-blur-sm">
+                <h3 className="font-bold-caps text-xs md:text-base text-white mb-4 md:mb-5 leading-tight min-h-[50px] md:min-h-[60px] flex items-center justify-center group-hover:text-blue-400 transition-colors duration-300">
+                  <span className="hidden md:inline">ACCESO A NUESTRO GRUPO EXCLUSIVO DE FACEBOOK EN DONDE TE APOYAMOS Y MOTIVAMOS SIEMPRE</span>
+                  <span className="md:hidden text-center">GRUPO EXCLUSIVO<br />FACEBOOK - APOYO Y MOTIVACIÓN</span>
                 </h3>
-                <div className="relative overflow-hidden rounded-xl flex items-center justify-center py-8">
+                <div className="relative overflow-hidden rounded-xl flex items-center justify-center py-4 md:py-8">
                   <img
                     src="/assets/images/hero/facebook.png"
                     alt="Facebook"
-                    className="w-auto h-32 md:h-40 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-700"
+                    className="w-auto h-20 md:h-32 lg:h-40 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-700"
                   />
                 </div>
               </div>
@@ -1513,14 +1522,19 @@ const Index = () => {
           </div>
 
           {/* CTA Button */}
-          <div className="text-center mb-8">
+          <div className="text-center mb-8 px-2">
             <DanceFitButton 
               onClick={handleInscribirse}
               disabled={isLoading}
-              className="mb-6 mx-auto text-xl md:text-2xl px-12 py-6 bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-500 hover:from-yellow-600 hover:via-yellow-500 hover:to-yellow-600 text-black font-bold shadow-2xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50"
+              className="mb-6 mx-auto text-base md:text-xl lg:text-2xl px-6 md:px-12 py-4 md:py-6 bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-500 hover:from-yellow-600 hover:via-yellow-500 hover:to-yellow-600 text-black font-bold shadow-2xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50 w-full max-w-md"
               variant="primary"
             >
-              {isLoading ? '⏳ CARGANDO...' : '🎁 ASEGURAR MI CUPO + BONOS GRATIS'}
+              {isLoading ? '⏳ CARGANDO...' : (
+                <>
+                  <span className="hidden md:inline">🎁 ASEGURAR MI CUPO + BONOS GRATIS</span>
+                  <span className="md:hidden">🎁 ASEGURAR CUPO + BONOS</span>
+                </>
+              )}
             </DanceFitButton>
 
             {/* Payment Logos */}
