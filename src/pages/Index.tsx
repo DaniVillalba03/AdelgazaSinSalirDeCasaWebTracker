@@ -212,19 +212,19 @@ const Index = () => {
       lastScrollY = currentScrollY;
     };
 
-    // Timer automático para móvil (mostrar oferta después de 30 segundos)
+    // Timer automático para móvil (mostrar oferta después de 2 minutos)
     const mobileTimer = setTimeout(() => {
       if (window.innerWidth <= 768 && !showExitIntent && !ofertaEspecialActivada) {
         setShowExitIntent(true);
       }
-    }, 30000); // 30 segundos
+    }, 120000); // 2 minutos
 
-    // Timer para botón flotante móvil (aparecer después de 15 segundos)
+    // Timer para botón flotante móvil (aparecer después de 30 segundos)
     const floatingButtonTimer = setTimeout(() => {
       if (window.innerWidth <= 768 && !ofertaEspecialActivada && !showExitIntent) {
         setShowMobileFloatingButton(true);
       }
-    }, 15000); // 15 segundos
+    }, 30000); // 30 segundos
 
     // Detección de intento de salir (beforeunload)
     const handleBeforeUnload = (e: BeforeUnloadEvent) => {
@@ -336,7 +336,7 @@ const Index = () => {
             <button
               onClick={handleInscribirse}
               disabled={isLoading}
-              className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-bold-caps px-6 py-3 rounded-full shadow-lg flex-shrink-0 disabled:opacity-50"
+              className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-bold-caps text-sm md:text-base px-4 py-2.5 md:px-6 md:py-3 rounded-full shadow-lg flex-shrink-0 disabled:opacity-50 whitespace-nowrap"
             >
               {isLoading ? 'CARGANDO...' : 'INSCRIBIRME'}
             </button>
@@ -1398,7 +1398,7 @@ const Index = () => {
             <DanceFitButton 
               onClick={handleInscribirse}
               disabled={isLoading}
-              className="mb-6 mx-auto text-xl md:text-2xl px-8 py-6 disabled:opacity-50"
+              className="mb-6 mx-auto text-base md:text-2xl px-4 py-4 md:px-8 md:py-6 disabled:opacity-50 w-full max-w-md"
               variant="primary"
             >
               {isLoading ? (
@@ -1410,7 +1410,10 @@ const Index = () => {
                   PROCESANDO...
                 </>
               ) : (
-                '⚡ COMENZAR MI TRANSFORMACIÓN HOY'
+                <>
+                  <span className="hidden md:inline">⚡ COMENZAR MI TRANSFORMACIÓN HOY</span>
+                  <span className="md:hidden">⚡ COMENZAR MI TRANSFORMACIÓN</span>
+                </>
               )}
             </DanceFitButton>
 

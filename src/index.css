@@ -113,14 +113,19 @@
     /* iOS optimizations */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* Prevent bounce scroll on iOS */
-    overscroll-behavior-y: none;
     /* Improve touch responsiveness on iOS */
     -webkit-tap-highlight-color: transparent;
     /* Prevent horizontal scroll */
     overflow-x: hidden;
     width: 100%;
     max-width: 100vw;
+  }
+
+  /* Prevent bounce scroll only on mobile/touch devices */
+  @media (hover: none) and (pointer: coarse) {
+    body {
+      overscroll-behavior-y: none;
+    }
   }
 
   /* iOS Safari specific fixes */
