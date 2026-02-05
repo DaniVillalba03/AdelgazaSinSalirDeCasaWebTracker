@@ -5,8 +5,8 @@
   min-height: 100vh;
   /* Enable smooth scrolling on mobile */
   -webkit-overflow-scrolling: touch;
-  /* Allow touch actions for scroll */
-  touch-action: pan-y pan-x;
+  /* Allow natural touch interactions */
+  touch-action: auto;
 }
 
 .logo {

@@ -226,16 +226,15 @@ const Index = () => {
       }
     }, 30000); // 30 segundos
 
-    // Detección de intento de salir (beforeunload)
-    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
-      // Solo en móvil y si no se ha mostrado ya y no se aceptó la oferta
-      if (window.innerWidth <= 768 && !showExitIntent && !ofertaEspecialActivada) {
-        setShowExitIntent(true);
-        e.preventDefault();
-        e.returnValue = ''; // Requerido por algunos navegadores
-        return ''; // Para compatibilidad
-      }
-    };
+    // Detección de intento de salir (beforeunload) - DESACTIVADO para no bloquear scroll
+    // const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+    //   if (window.innerWidth <= 768 && !showExitIntent && !ofertaEspecialActivada) {
+    //     setShowExitIntent(true);
+    //     e.preventDefault();
+    //     e.returnValue = '';
+    //     return '';
+    //   }
+    // };
 
     // Configurar eventos según el dispositivo
     if (window.innerWidth > 768) {
@@ -243,9 +242,9 @@ const Index = () => {
       document.addEventListener('mouseleave', handleMouseLeave);
       document.addEventListener('mouseenter', handleMouseEnter);
     } else {
-      // Móvil: scroll hacia arriba y beforeunload
+      // Móvil: solo scroll hacia arriba (beforeunload desactivado para no interferir con scroll)
       window.addEventListener('scroll', handleScroll, { passive: true });
-      window.addEventListener('beforeunload', handleBeforeUnload);
+      // window.addEventListener('beforeunload', handleBeforeUnload);
     }
 
     return () => {
@@ -253,7 +252,7 @@ const Index = () => {
       document.removeEventListener('mouseleave', handleMouseLeave);
       document.removeEventListener('mouseenter', handleMouseEnter);
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('beforeunload', handleBeforeUnload);
+      // window.removeEventListener('beforeunload', handleBeforeUnload);
       clearTimeout(mobileTimer);
       clearTimeout(floatingButtonTimer);
     };
@@ -1810,7 +1809,7 @@ const Index = () => {
 
       {/* Exit Intent Modal */}
       {showExitIntent && (
-        <div className="fixed inset-0 bg-black/90 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fade-in">
+        <div className="fixed inset-0 bg-black/90 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fade-in overflow-y-auto">
           <div className="bg-gradient-to-br from-purple-900 via-purple-800 to-black rounded-2xl p-8 max-w-md w-full relative shadow-2xl border border-yellow-400/30">
             {/* Decorative elements */}
             <div className="absolute -top-20 -left-20 w-40 h-40 bg-yellow-400/20 rounded-full blur-3xl"></div>

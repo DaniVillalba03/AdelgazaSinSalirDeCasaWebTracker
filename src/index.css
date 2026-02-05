@@ -105,11 +105,13 @@
   html {
     /* Prevent horizontal scroll on all devices */
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: scroll;
     width: 100%;
     height: 100%;
     /* Enable smooth scrolling on touch devices */
     -webkit-overflow-scrolling: touch;
+    /* Ensure scroll works on mobile */
+    touch-action: auto;
   }
 
   body {
@@ -121,22 +123,23 @@
     -webkit-tap-highlight-color: transparent;
     /* Prevent horizontal scroll */
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: scroll;
     width: 100%;
     max-width: 100vw;
+    min-height: 100vh;
     /* Enable smooth scrolling on mobile */
     -webkit-overflow-scrolling: touch;
-    /* Allow vertical scroll */
-    touch-action: pan-y;
+    /* Allow all touch actions for natural scrolling */
+    touch-action: auto;
     position: relative;
   }
 
   /* Prevent bounce scroll only on mobile/touch devices, but allow normal scroll */
   @media (hover: none) and (pointer: coarse) {
     body {
-      overscroll-behavior-y: contain;
-      /* Ensure scrolling works on mobile */
-      overflow-y: auto !important;
+      overscroll-behavior-y: auto;
+      /* Ensure scrolling works perfectly on mobile */
+      overflow-y: scroll !important;
       -webkit-overflow-scrolling: touch;
     }
   }
