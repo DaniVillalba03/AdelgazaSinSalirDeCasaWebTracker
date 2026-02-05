@@ -260,9 +260,7 @@ const Index = () => {
 
   const handleInscribirse = () => {
     setIsLoading(true);
-    const url = ofertaEspecialActivada 
-      ? 'https://go.hotmart.com/Y102004689J?ap=5589'  // URL con descuento
-      : 'https://go.hotmart.com/Y102004689J?ap=0ff3';  // URL normal
+    const url = 'https://go.hotmart.com/T103989774P?ap=0ff3';  // URL de pago
     window.open(url, '_blank');
     setTimeout(() => setIsLoading(false), 2000);
   };
@@ -271,7 +269,7 @@ const Index = () => {
     setOfertaEspecialActivada(true);  // Activar la oferta especial
     setShowExitIntent(false);  // Cerrar el modal
     // No marcar como rechazado, permitir que no vuelva a aparecer
-    const url = 'https://go.hotmart.com/Y102004689J?ap=5589';
+    const url = 'https://go.hotmart.com/T103989774P?ap=0ff3';
     window.open(url, '_blank');
   };
 
