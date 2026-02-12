@@ -223,7 +223,7 @@ const Index = () => {
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-1">
                 <span className="text-gray-400 text-sm line-through">$300</span>
-                <span className="text-green-400 text-xl font-bold">$37</span>
+                <span className="text-green-400 text-xl font-bold">$29</span>
               </div>
               <div className="text-yellow-400 text-xs font-bold flex items-center gap-1">
                 <span className="animate-pulse">🔥</span>
@@ -963,7 +963,7 @@ const Index = () => {
             <div className="mb-8">
               <div className="flex items-center justify-center gap-4 mb-4">
                 <span className="text-gray-400 text-3xl line-through">$300</span>
-                <span className="text-green-400 text-5xl font-bold">$37</span>
+                <span className="text-green-400 text-5xl font-bold">$29</span>
               </div>
               <p className="text-white text-sm">
                 (La oferta convertida a tu moneda local)
@@ -1042,7 +1042,7 @@ const Index = () => {
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" />
-                      <span className="font-bold text-yellow-400">Todo por $37 USD</span>
+                      <span className="font-bold text-yellow-400">Todo por $29 USD</span>
                     </li>
                   </ul>
                 </div>
@@ -1289,7 +1289,7 @@ const Index = () => {
           <div className="text-center mb-8">
             <div className="mb-6">
               <span className="text-4xl md:text-5xl text-red-500 line-through font-bold mr-4">$300</span>
-              <span className="text-5xl md:text-7xl text-green-400 font-bold-caps">$37</span>
+              <span className="text-5xl md:text-7xl text-green-400 font-bold-caps">$29</span>
             </div>
             
             <DanceFitButton 
