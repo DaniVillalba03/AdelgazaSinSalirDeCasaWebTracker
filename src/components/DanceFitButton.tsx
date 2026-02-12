@@ -11,6 +11,7 @@ interface DanceFitButtonProps {
   onClick?: () => void;
   icon?: boolean;
   loading?: boolean;
+  disabled?: boolean;
 }
 
 export const DanceFitButton = ({ 
@@ -20,7 +21,8 @@ export const DanceFitButton = ({
   className,
   onClick,
   icon = false,
-  loading = false
+  loading = false,
+  disabled = false
 }: DanceFitButtonProps) => {
   const baseStyles = `font-bold-caps transition-all duration-300 
                      hover:scale-105 active:scale-95 
@@ -60,7 +62,7 @@ export const DanceFitButton = ({
   return (
     <Button
       onClick={onClick}
-      disabled={loading}
+      disabled={loading || disabled}
       className={cn(
         baseStyles,
         variantStyles[variant],
