@@ -14,10 +14,6 @@ import WaveSeparator from "@/components/WaveSeparator";
 import { useState, useEffect, useRef } from "react";
 
 const Index = () => {
-  const [showExitIntent, setShowExitIntent] = useState(false);
-  const [ofertaEspecialActivada, setOfertaEspecialActivada] = useState(false);
-  const [showMobileFloatingButton, setShowMobileFloatingButton] = useState(false);
-  const [usuarioRechazoOferta, setUsuarioRechazoOferta] = useState(false);
   const [expandedBenefits, setExpandedBenefits] = useState(false);
   const [expandedMethod, setExpandedMethod] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -175,109 +171,11 @@ const Index = () => {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    let mouseLeftWindow = false;
-    let lastScrollY = 0;
-    let scrollUpCount = 0;
-
-    // Exit intent para desktop (mouse leave)
-    const handleMouseLeave = (e: MouseEvent) => {
-      if (e.clientY <= 0 && !mouseLeftWindow && !ofertaEspecialActivada) {
-        mouseLeftWindow = true;
-        setShowExitIntent(true);
-      }
-    };
-
-    const handleMouseEnter = () => {
-      mouseLeftWindow = false;
-    };
-
-    // Exit intent para móvil (scroll rápido hacia arriba)
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      // Detectar scroll hacia arriba rápido
-      if (currentScrollY < lastScrollY && currentScrollY < 100) {
-        scrollUpCount++;
-        
-        // Si hace scroll hacia arriba rápido 2 veces cerca del top
-        if (scrollUpCount >= 2 && !ofertaEspecialActivada) {
-          setShowExitIntent(true);
-          scrollUpCount = 0; // Reset counter
-        }
-      } else {
-        scrollUpCount = 0; // Reset si no es scroll hacia arriba
-      }
-      
-      lastScrollY = currentScrollY;
-    };
-
-    // Timer automático para móvil (mostrar oferta después de 2 minutos)
-    const mobileTimer = setTimeout(() => {
-      if (window.innerWidth <= 768 && !showExitIntent && !ofertaEspecialActivada) {
-        setShowExitIntent(true);
-      }
-    }, 120000); // 2 minutos
-
-    // Timer para botón flotante móvil (aparecer después de 30 segundos)
-    const floatingButtonTimer = setTimeout(() => {
-      if (window.innerWidth <= 768 && !ofertaEspecialActivada && !showExitIntent) {
-        setShowMobileFloatingButton(true);
-      }
-    }, 30000); // 30 segundos
-
-    // Detección de intento de salir (beforeunload) - DESACTIVADO para no bloquear scroll
-    // const handleBeforeUnload = (e: BeforeUnloadEvent) => {
-    //   if (window.innerWidth <= 768 && !showExitIntent && !ofertaEspecialActivada) {
-    //     setShowExitIntent(true);
-    //     e.preventDefault();
-    //     e.returnValue = '';
-    //     return '';
-    //   }
-    // };
-
-    // Configurar eventos según el dispositivo
-    if (window.innerWidth > 768) {
-      // Desktop: mouse leave
-      document.addEventListener('mouseleave', handleMouseLeave);
-      document.addEventListener('mouseenter', handleMouseEnter);
-    } else {
-      // Móvil: solo scroll hacia arriba (beforeunload desactivado para no interferir con scroll)
-      window.addEventListener('scroll', handleScroll, { passive: true });
-      // window.addEventListener('beforeunload', handleBeforeUnload);
-    }
-
-    return () => {
-      // Cleanup todos los eventos
-      document.removeEventListener('mouseleave', handleMouseLeave);
-      document.removeEventListener('mouseenter', handleMouseEnter);
-      window.removeEventListener('scroll', handleScroll);
-      // window.removeEventListener('beforeunload', handleBeforeUnload);
-      clearTimeout(mobileTimer);
-      clearTimeout(floatingButtonTimer);
-    };
-  }, [showExitIntent, ofertaEspecialActivada]);
-
   const handleInscribirse = () => {
     setIsLoading(true);
-    const url = ofertaEspecialActivada 
-      ? 'https://go.hotmart.com/T103989774P?ap=5589'  // URL con descuento
-      : 'https://go.hotmart.com/T103989774P?ap=0ff3';  // URL normal
+    const url = 'https://go.hotmart.com/T103989774P?ap=5589';  // URL con descuento (oferta principal)
     window.open(url, '_blank');
     setTimeout(() => setIsLoading(false), 2000);
-  };
-
-  const handleAprovecharOferta = () => {
-    setOfertaEspecialActivada(true);  // Activar la oferta especial
-    setShowExitIntent(false);  // Cerrar el modal
-    // No marcar como rechazado, permitir que no vuelva a aparecer
-    const url = 'https://go.hotmart.com/T103989774P?ap=5589';  // URL con descuento
-    window.open(url, '_blank');
-  };
-
-  const handleRechazarOferta = () => {
-    setShowExitIntent(false);  // Cerrar el modal
-    // NO marcar usuarioRechazoOferta como true para que siga apareciendo
   };
 
   return (
@@ -1807,100 +1705,7 @@ const Index = () => {
         </div>
       </footer>
 
-      {/* Exit Intent Modal */}
-      {showExitIntent && (
-        <div className="fixed inset-0 bg-black/90 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fade-in overflow-y-auto">
-          <div className="bg-gradient-to-br from-purple-900 via-purple-800 to-black rounded-2xl p-8 max-w-md w-full relative shadow-2xl border border-yellow-400/30">
-            {/* Decorative elements */}
-            <div className="absolute -top-20 -left-20 w-40 h-40 bg-yellow-400/20 rounded-full blur-3xl"></div>
-            <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-purple-600/20 rounded-full blur-3xl"></div>
-            
-            <button
-              onClick={() => setShowExitIntent(false)}
-              className="absolute top-4 right-4 text-white/60 hover:text-white transition-colors duration-300 z-10"
-            >
-              <X className="w-6 h-6" />
-            </button>
-            
-            <div className="text-center text-white relative">
-              {/* Icon and Title */}
-              <div className="mb-6">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full mb-4 shadow-lg">
-                  <svg className="w-8 h-8 text-purple-900" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                  </svg>
-                </div>
-                <h2 className="font-bold-caps text-3xl mb-2 text-yellow-400">
-                  ¡ESPERA!
-                </h2>
-                <h3 className="font-bold text-xl text-white/90">
-                  ANTES DE IRTE...
-                </h3>
-              </div>
-              
-              <p className="text-lg mb-6 text-white/80">
-                Tenemos una <strong className="text-yellow-400">OFERTA ESPECIAL</strong> solo para ti
-              </p>
-              
-              {/* Discount Box */}
-              <div className="bg-gradient-to-br from-yellow-400 to-yellow-500 text-purple-900 rounded-xl p-6 mb-6 shadow-xl relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white/20 rounded-full -mr-16 -mt-16"></div>
-                <div className="relative">
-                  <div className="flex items-center justify-center gap-2 mb-2">
-                    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M20 6h-2.18c.11-.31.18-.65.18-1a2.996 2.996 0 0 0-5.5-1.65l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z"/>
-                    </svg>
-                    <h4 className="font-bold-caps text-xl">
-                      DESCUENTO EXCLUSIVO
-                    </h4>
-                  </div>
-                  <p className="font-bold-caps text-4xl mb-1">25% OFF</p>
-                  <p className="text-sm font-semibold opacity-90">Solo por los próximos 10 minutos</p>
-                </div>
-              </div>
-              
-              {/* CTA Buttons */}
-              <div className="space-y-3 mb-4">
-                <button
-                  onClick={handleAprovecharOferta}
-                  className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-purple-900 font-bold-caps py-4 px-6 rounded-xl transform hover:scale-105 transition-all duration-300 shadow-xl text-lg"
-                >
-                  ¡APROVECHAR DESCUENTO!
-                </button>
-                
-                <button
-                  onClick={handleRechazarOferta}
-                  className="text-white/60 hover:text-white/80 text-sm underline transition-colors duration-300"
-                >
-                  No, gracias. Continuar sin descuento
-                </button>
-              </div>
-              
-              <div className="text-xs text-white/50">
-                * Oferta válida solo una vez por usuario
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
 
-      {/* Botón Flotante Móvil */}
-      {showMobileFloatingButton && !showExitIntent && !ofertaEspecialActivada && (
-        <div className="fixed bottom-4 right-4 z-40 md:hidden">
-          <button
-            onClick={() => {
-              setShowMobileFloatingButton(false);
-              setShowExitIntent(true);
-            }}
-            className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-800 px-6 py-3 rounded-full font-bold shadow-lg animate-bounce flex items-center gap-2"
-          >
-            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M20 6h-2.18c.11-.31.18-.65.18-1a2.996 2.996 0 0 0-5.5-1.65l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z"/>
-            </svg>
-            <span>¡DESCUENTO ESPECIAL!</span>
-          </button>
-        </div>
-      )}
     </div>
   );
 };
